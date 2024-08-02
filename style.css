@@ -1,0 +1,145 @@
+/* Importa a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+}
+
+body ::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: rgb(85,85,85);
+}
+
+/* TRANSITION */
+a, .btn {
+  transition: all 300ms ease;
+}
+
+/* DESKTOP NAV */
+nav, 
+.navlinks {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Barra Lateral Flutuante */
+.sidebar {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 17px;
+  border-radius: 50px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffffff;
+  text-decoration: none;
+  transition: background 0.3s, filter 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+/* Cores dos ícones e transições */
+.sidebar-icon img, .sidebar-icon svg {
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  filter: grayscale(100%); /* Desatura completamente, preto e branco */
+  transition: filter 0.3s, transform 0.3s; /* Transição para filter */
+}
+
+/* Hover */
+.sidebar-icon:hover img, .sidebar-icon:hover svg {
+  filter: grayscale(0%); /* Restaura a cor ao passar o mouse */
+}
+
+/* Clique */
+.sidebar-icon:active img, .sidebar-icon:active svg {
+  filter: grayscale(0%); /* Garante que a cor completa esteja visível ao clicar */
+  transform: scale(1.1); /* Opcional: aumenta o ícone ao clicar */
+}
+
+.sidebar-icon:hover {
+  background: rgba(255, 255, 255, 0.8); /* Cor de fundo ao passar o mouse */
+}
+
+/* Mobile Navbar (Bottom Bar) */
+#mobile-nav {
+  display: none; /* Oculta a barra inferior em telas maiores */
+}
+
+.lowerbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Ajuste a altura conforme necessário */
+  background: #f8f8f8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -1px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.lowerbar-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  transition: filter 0.3s, transform 0.3s; /* Adiciona transição */
+}
+
+/* Transições dos ícones da barra inferior */
+.lowerbar-icon img, .lowerbar-icon svg {
+  width: 35px;
+  height: 35px;
+  filter: grayscale(100%); /* Desatura completamente, preto e branco */
+}
+
+/* Hover */
+.lowerbar-icon:hover img, .lowerbar-icon:hover svg {
+  filter: grayscale(0%); /* Restaura a cor ao passar o mouse */
+}
+
+/* Clique */
+.lowerbar-icon:active img, .lowerbar-icon:active svg {
+  filter: grayscale(0%); /* Garante que a cor completa esteja visível ao clicar */
+  transform: scale(1.1); /* Opcional: aumenta o ícone ao clicar */
+}
+
