@@ -1,17 +1,55 @@
-const allCards = document.querySelectorAll(".cards-scroll .card");
-const headerHeight = 70;
-const baseWidth = 60;
+gsap.registerPlugin(ScrollTrigger);
 
-if (allCards.length) 
-{
-	allCards.forEach((card, i) => {
-const incValue = i * headerHeight;
-const decValue = (allCards.length - i) * headerHeight;
-const widthValue = (allCards.length - i) * baseWidth;
+document.addEventListener("DOMContentLoaded", function() {
+	const footer = document.querySelector(".footer");
+	const lastCard = document.querySelector(".card.scroll");
+	const pinnedSections = gsap.utils.toArray(".pinned");
 
-card.style.marginTop = `${incValue}px`;
-card.style.marginBottom = `${decValue}px`;
-card.style.top = `${incValue}px`;
-card.style.bottom = `calc(-100vh + ${decValue}px)`;
-card.style.maxWidth = `calc(100% - ${widthValue}px)`;
-	})};
+	pinnedSections.forEach((section, index, sections) => {
+		let img = section.querySelector(".img");
+
+		let nextSection = sections[index + 1] || lastCard;
+		let endScalepoint = `top+=${nextSection.offsetTop - section.offsetTop} top`;
+
+		gsap.to(section,  {
+			scrollTrigger: {
+				trigger: section,
+			start: "top top",
+			end:
+				index === sections.length
+					? `+=${lastCard.offsetHeight/2}`
+					: footer.offsetTop - window.innerHeight,
+					pin: true,
+					pinSpacing: false,
+					scrub: 1,
+			},
+		
+		});
+		gsap.fromTo(
+			img, 
+			{scale: 1}, 
+			{
+				scale: 0.5,
+				ease: "none",
+				scrollTrigger: {
+					trigger: section,
+					start: "top top",
+					end: endScalepoint,
+					scrub: 1,
+				},
+			}
+		);
+	});
+
+const heroH1 = document.querySelector(".hero h1");
+ScrollTrigger.create({
+	trigger: document.body,
+	start: "top top",
+	end: "+=400vh",
+	scrub: 1,
+	onUpdate: (self) => {
+		let opacityProgress = self.progress;
+		heroH1.style.opacity = 1 - opacityProgress;
+	},
+});
+});
