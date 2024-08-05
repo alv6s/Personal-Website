@@ -92,3 +92,57 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+	const projectButtons = document.querySelectorAll('.project-button');
+	const modal = document.getElementById('project-modal');
+	const closeBtn = document.querySelector('.close-btn');
+	const modalImage = document.getElementById('modal-image');
+	const modalVideo = document.getElementById('modal-video');
+	const modalVideoSource = document.getElementById('modal-video-source');
+	const modalCaption = document.getElementById('modal-caption');
+  
+	// Dados dos projetos (exemplo)
+	const projects = {
+	  1: { type: 'image', src: 'assets/project1.jpg', caption: 'Project 1 Description' },
+	  2: { type: 'image', src: 'assets/project2.jpg', caption: 'Project 2 Description' },
+	  3: { type: 'video', src: 'assets/project3.mp4', caption: 'Project 3 Description' },
+	  4: { type: 'image', src: 'assets/project4.jpg', caption: 'Project 4 Description' },
+	  5: { type: 'video', src: 'assets/project5.mp4', caption: 'Project 5 Description' },
+	  6: { type: 'image', src: 'assets/project6.jpg', caption: 'Project 6 Description' }
+	};
+  
+	projectButtons.forEach(button => {
+	  button.addEventListener('click', () => {
+		const projectId = button.getAttribute('data-project');
+		const project = projects[projectId];
+  
+		if (project.type === 'image') {
+		  modalImage.src = project.src;
+		  modalVideo.style.display = 'none';
+		  modalImage.style.display = 'block';
+		} else if (project.type === 'video') {
+		  modalVideoSource.src = project.src;
+		  modalVideo.style.display = 'block';
+		  modalImage.style.display = 'none';
+		}
+  
+		modalCaption.textContent = project.caption;
+		modal.style.display = 'block';
+	  });
+	});
+  
+	closeBtn.addEventListener('click', () => {
+	  modal.style.display = 'none';
+	  modalImage.src = '';
+	  modalVideoSource.src = '';
+	});
+  
+	window.addEventListener('click', (event) => {
+	  if (event.target === modal) {
+		modal.style.display = 'none';
+		modalImage.src = '';
+		modalVideoSource.src = '';
+	  }
+	});
+  });
+  

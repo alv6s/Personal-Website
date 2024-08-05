@@ -70,22 +70,35 @@ section {
 	top: 50%;
 	left: 50%;
 	max-width: 90%; /* Ajusta a largura máxima ao tamanho do contêiner pai */
-  	max-height: 70%; 
+	max-height: 70%;
 	transform: translate(-50%, -50%);
 	width: 500px;
 	height: 700px;
 	background-color: aqua;
 	border-radius: 40px;
+	padding: 20px; /* Espaço interno ao redor dos botões */
+	display: flex;
+	flex-direction: column; /* Alinha os itens verticalmente */
+	 /* Centraliza os itens horizontalmente */
+	justify-content: center; /* Centraliza os itens verticalmente */
+	gap: 30px; /* Adiciona espaçamento entre os elementos filhos */
+  }
+  
 
-}
-.img h1{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 50px;
-	color: black;
-}
+.img h1 {
+	font-size: 2.5rem; /* Ajusta o tamanho da fonte conforme necessário */
+	margin: 0; /* Remove a margem padrão */
+	margin-left: 3vw; /* Margem lateral esquerda */
+	margin-top: 1vh; /* Margem superior */
+	margin-right: 20px; /* Margem lateral direita */
+  }
+
+  .img h2 {
+	margin-left: 3vw; /* Margem lateral esquerda */
+	margin-top: 1vh; /* Margem superior */
+	margin-right: 20px; 
+	font-size: 1.5rem; /* Ajusta o tamanho da fonte conforme necessário */
+  }
 
 .footer{
 	width: 1%;
@@ -226,3 +239,145 @@ a {
   transform: scale(1.1); /* Opcional: aumenta o ícone ao clicar */
 }
 
+.buttons {
+	display: flex;
+	flex-direction: column; /* Alinha os botões verticalmente em uma coluna */
+	align-items: center; /* Centraliza os botões horizontalmente dentro do contêiner */
+	gap: 0px; /* Espaçamento entre os botões */
+	width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
+}
+
+.project-list {
+	display: flex;
+	flex-direction: column; /* Alinha os botões verticalmente */
+	gap: 0; /* Remove o espaçamento entre os botões */
+	align-items: center; /* Centraliza os botões horizontalmente */
+	width: 100%; /* Garante que a lista de botões ocupe toda a largura disponível */
+}
+
+.project-button {
+	background-color: transparent; /* Remove o background */
+	font: inherit;
+	color: rgb(0, 0, 0); /* Cor do texto padrão */
+	border: none; /* Remove a borda dos botões */
+	padding: 1rem 10px; /* Espaçamento interno dos botões */
+	padding-bottom: 1rem;
+	font-weight: bold;
+	font-size: 1.2rem;
+	cursor: pointer;
+	transition: color 0.3s; /* Transição suave para a cor do texto */
+	width: 100%; /* Faz com que os botões ocupem toda a largura disponível */
+	text-align: center;
+	position: relative; /* Necessário para o pseudo-elemento */
+}
+
+.project-button::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	border-radius: 2px;
+	transform: translateX(-50%);
+	width: 90%;
+	height: 2px;
+	background-color: #39393926;
+}
+
+.project-button:last-child::after {
+	content: none; /* Remove o traço do último botão */
+}
+
+.project-button:hover {
+	color: #a2a2a2; /* Muda a cor do texto ao passar o mouse */
+}
+
+  /* Estilo para o modal */
+  .modal {
+	display: none; /* Oculta o modal por padrão */
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+  }
+  
+  .modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	max-width: 90%; /* Ajusta a largura máxima ao tamanho do contêiner pai */
+	max-height: 70%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: 700px;
+	background-color: rgba(1, 12, 173, 0.696);
+	border-radius: 40px;
+  }
+  
+  .modal-content img, .modal-content video {
+	width: 100%;
+	height: auto;
+	display: block;
+  }
+  
+  .modal-content p {
+	margin-top: 10px;
+	font-size: 1.2rem;
+  }
+  
+  .close-btn {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #000;
+	cursor: pointer;
+  }
+
+  .contact-form {
+	width: 100%; /* Garante que o formulário ocupe toda a largura disponível */
+	display: flex;
+	flex-direction: column;
+	gap: 15px; /* Espaçamento entre os campos do formulário */
+  }
+  
+  .form-group {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .form-group label {
+	font-size: 1rem;
+	margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
+  }
+  
+  .form-group input,
+  .form-group textarea {
+	width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	font-size: 1rem;
+  }
+  
+  .form-group textarea {
+	resize: vertical; /* Permite redimensionar verticalmente */
+  }
+  
+  .submit-btn {
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+	background-color: #0056b3;
+  }
