@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const modalVideo = document.getElementById('modal-video');
 	const modalVideoSource = document.getElementById('modal-video-source');
 	const modalCaption = document.getElementById('modal-caption');
-  
+	
 	// Dados dos projetos (exemplo)
 	const projects = {
 	  1: { type: 'image', src: 'assets/project1.jpg', caption: 'Project 1 Description' },
@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 		modalCaption.textContent = project.caption;
 		modal.style.display = 'block';
+		document.body.style.overflow = 'hidden'; // Desativa o scroll do body
 	  });
 	});
   
@@ -135,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  modal.style.display = 'none';
 	  modalImage.src = '';
 	  modalVideoSource.src = '';
+	  document.body.style.overflow = 'auto'; // Reativa o scroll do body
 	});
   
 	window.addEventListener('click', (event) => {
@@ -142,6 +144,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		modal.style.display = 'none';
 		modalImage.src = '';
 		modalVideoSource.src = '';
+		document.body.style.overflow = 'auto'; // Reativa o scroll do body
+	  }
+	});
+  
+	// Fechar o modal ao rolar
+	window.addEventListener('scroll', () => {
+	  if (modal.style.display === 'block') {
+		modal.style.display = 'none';
+		modalImage.src = '';
+		modalVideoSource.src = '';
+		document.body.style.overflow = 'auto'; // Reativa o scroll do body
 	  }
 	});
   });
