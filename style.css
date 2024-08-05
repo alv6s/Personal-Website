@@ -6,6 +6,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+	width: 15px;
+	height: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+	background: #ffffff;
+	border-radius: 40px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	background: #8989892a;
+	border-radius: 40px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+	background: #8989897f;
+  }
+
+html, body {
+	overflow-x: hidden; /* Impede o scroll horizontal */
+	width: 100%; /* Garante que o body não exceda a largura da viewport */
+	font-family: "Urbanist", sans-serif;
+	scroll-behavior: smooth;
+  }
+
+img {
+	pointer-events: none; /* Desativa todos os eventos do ponteiro, incluindo arrastar */
+/* Para navegadores que suportam */
+  }
 
 .container {
   width: 100%;
@@ -25,9 +55,9 @@ section {
 	transform: translate(-50%, -50%);
 	text-align: center;
 	font-weight: 400;
-	font-size: 200px;
+	font-size: clamp(6rem, 15vw, 15rem);
 	color: black;
-	letter-spacing: -8px;
+	letter-spacing: clamp(-0.5rem, -1vw);
 	line-height: 90%;
 }
 
@@ -39,6 +69,8 @@ section {
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	max-width: 90%; /* Ajusta a largura máxima ao tamanho do contêiner pai */
+  	max-height: 70%; 
 	transform: translate(-50%, -50%);
 	width: 500px;
 	height: 700px;
@@ -63,15 +95,6 @@ section {
 	justify-content: center;
 	align-items: center;
 	color: green;
-}
-
-body {
-  font-family: "Urbanist", sans-serif;
-}
-
-
-html {
-  scroll-behavior: smooth;
 }
 
 p {
