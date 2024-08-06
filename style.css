@@ -74,23 +74,26 @@ section {
 	transform: translate(-50%, -50%);
 	width: 500px;
 	height: 700px;
-	background-color: aqua;
+	background-color: rgba(205, 205, 205, 0.564);
 	border-radius: 40px;
-	padding: 20px; /* Espaço interno ao redor dos botões */
+ /* Espaço interno ao redor dos botões */
+	padding-top: 1.5%;
 	display: flex;
 	flex-direction: column; /* Alinha os itens verticalmente */
 	 /* Centraliza os itens horizontalmente */
-	justify-content: center; /* Centraliza os itens verticalmente */
-	gap: 30px; /* Adiciona espaçamento entre os elementos filhos */
+	justify-content: flex-start;/* Centraliza os itens verticalmente */
+	gap: 4vh; /* Adiciona espaçamento entre os elementos filhos */
+	backdrop-filter: blur(10px); /* Adiciona o efeito de desfoque ao fundo */
+    -webkit-backdrop-filter: blur(10px); /* Prefixo para compatibilidade com WebKit */
   }
   
 
 .img h1 {
 	font-size: 2.5rem; /* Ajusta o tamanho da fonte conforme necessário */
 	margin: 0; /* Remove a margem padrão */
-	margin-left: 3vw; /* Margem lateral esquerda */
+	margin-left: 3.9vw; /* Margem lateral esquerda */
 	margin-top: 1vh; /* Margem superior */
-	margin-right: 20px; /* Margem lateral direita */
+	margin-right: 3vw; /* Margem lateral direita */
   }
 
   .img h2 {
@@ -239,12 +242,17 @@ a {
   transform: scale(1.1); /* Opcional: aumenta o ícone ao clicar */
 }
 
+
+
 .buttons {
 	display: flex;
 	flex-direction: column; /* Alinha os botões verticalmente em uma coluna */
 	align-items: center; /* Centraliza os botões horizontalmente dentro do contêiner */
-	gap: 0px; /* Espaçamento entre os botões */
+	gap: 0.5rem; /* Espaçamento entre os botões */
 	width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
+	min-height: 100px;
+	margin-bottom: 10%;
+	overflow-y: auto;
 }
 
 .project-list {
@@ -253,7 +261,9 @@ a {
 	gap: 0; /* Remove o espaçamento entre os botões */
 	align-items: center; /* Centraliza os botões horizontalmente */
 	width: 100%; /* Garante que a lista de botões ocupe toda a largura disponível */
+	align-self: center;
 }
+
 
 .project-button {
 	background-color: transparent; /* Remove o background */
@@ -263,7 +273,7 @@ a {
 	padding: 1rem 10px; /* Espaçamento interno dos botões */
 	padding-bottom: 1rem;
 	font-weight: bold;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	cursor: pointer;
 	transition: color 0.3s; /* Transição suave para a cor do texto */
 	width: 100%; /* Faz com que os botões ocupem toda a largura disponível */
@@ -313,7 +323,7 @@ a {
 	transform: translate(-50%, -50%);
 	width: 500px;
 	height: 700px;
-	background-color: rgb(22, 92, 92);
+	background-color: rgb(221, 221, 221);
 	border-radius: 40px;
 	padding: 20px; /* Espaço interno ao redor dos botões */
 	display: flex;
@@ -333,27 +343,51 @@ a {
   }
   
   .modal-content p {
-	margin-top: 10px;
+	margin-top: 3px;
+	margin-left: 0px ;
 	font-size: 1.2rem;
   }
   
-  .close-btn {
-	position: absolute;
-	top: 10px;
-	right: 15px;
-	font-size: 2rem;
-	font-weight: bold;
-	color: #000;
-	cursor: pointer;
-  }
+ .close-btn {
+top: 9%;
+left: 50.8%;
+  position: relative;
+  font-size: 2rem;
+
+  border: none; /* Remove a borda padrão */
+  border-radius: 50%;
+  color: #00000027;
+  cursor: pointer;
+}
 
   .contact-form {
-	width: 100%; /* Garante que o formulário ocupe toda a largura disponível */
+	width: 92%; /* Garante que o formulário ocupe toda a largura disponível */
+	min-height: 100px;/* Altura do formulário */
 	display: flex;
 	flex-direction: column;
-	gap: 15px; /* Espaçamento entre os campos do formulário */
+	align-self: center;
+	justify-content: center;
+	gap: 1.6rem; /* Espaçamento entre os campos do formulário */
+	box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
+    padding: 20px; /* Adiciona padding interno para espaçamento *//* Arredonda os cantos da card */
+	padding-bottom: 10%; /* Espaçamento inferior */
+	overflow-y: auto; /* Adiciona barra de rolagem vertical */
+	
   }
+  .contact-form::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem vertical */
+    height: 12px; /* Altura da barra de rolagem horizontal (se necessário) */
+}
   
+.contact-form::-webkit-scrollbar-thumb {
+    background: #00000039; /* Cor do polegar da barra de rolagem */
+    border-radius: 10px; /* Arredonda os cantos do polegar */
+}
+.contact-form::-webkit-scrollbar-track {
+    background: #f1f1f195; /* Cor de fundo da trilha da barra de rolagem */
+    border-radius: 10px; /* Arredonda os cantos da trilha */
+}
+
   .form-group {
 	display: flex;
 	flex-direction: column;
@@ -368,21 +402,27 @@ a {
   .form-group textarea {
 	width: 100%; /* Garante que os campos ocupem toda a largura disponível */
 	padding: 10px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
+	border-radius: 20px;
+	border: 1px solid #cccccc96;
 	font-size: 1rem;
+	box-sizing: border-box;
   }
   
   .form-group textarea {
-	resize: vertical; /* Permite redimensionar verticalmente */
+	resize: none; /* Permite redimensionar verticalmente */
+	min-height: 10px; /* Altura mínima */
+	max-height: 800px; /* Altura máxima */
   }
   
   .submit-btn {
 	padding: 10px 20px;
+	margin-top: 3%;
+	align-self: center; /* Centraliza o botão horizontalmente */
+	width: 40%; /* Ajusta a largura do botão */
 	background-color: #007bff;
 	color: white;
 	border: none;
-	border-radius: 5px;
+	border-radius: 20px;
 	font-size: 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s;
