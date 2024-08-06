@@ -233,3 +233,8 @@ document.addEventListener("DOMContentLoaded", function() {
         customCursor.style.top = `${e.clientY}px`;
     });
 });
+
+
+
+
+
