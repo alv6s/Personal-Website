@@ -37,4 +37,15 @@
 		font-weight: bold;
 		font-size: 1.2rem;
 	}
+	.testando .text{
+	  font-size: 2rem;
+	  
+	}
+	
+	.testando .text.first-text {
+
+		font-size: 1.3rem;
+	
+	  }
+	
 }

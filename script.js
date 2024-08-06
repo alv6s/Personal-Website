@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
         );
     });
 
-    const heroH1 = document.querySelector(".hero h1");
+    const heroH1 = document.querySelector(".hero .testando");
     ScrollTrigger.create({
         trigger: document.body,
         start: "top top",
@@ -159,3 +159,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+const text = document.querySelector(".sec-text");
+
+const textLoad = () => {
+	setTimeout(() => {
+		text.textContent = "UX/UI Design";
+	}, 0);
+	setTimeout(() => {
+		text.textContent = "Web Development";
+	}, 4000);
+	setTimeout(() => {
+		text.textContent = "3D Modeling";
+	}, 8000);
+	setTimeout(() => {
+		text.textContent = "Image Design";
+	}, 12000);
+	setTimeout(() => {
+		text.textContent = "Front-End";
+	}, 16000);
+	setTimeout(() => {
+		text.textContent = "Mobile Development";
+	}, 20000);
+	setTimeout(() => {
+		text.textContent = "Video/Photo Editing";
+	}, 24000);
+	setTimeout(() => {
+		text.textContent = "VR/AR Development";
+	}, 28000);
+	}
+	textLoad();
+	setInterval(textLoad, 32000);
+

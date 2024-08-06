@@ -31,6 +31,57 @@ html, body {
 	font-family: "Urbanist", sans-serif;
 	scroll-behavior: smooth;
   }
+.testando {
+	position: absolute;
+	width: 100%;
+	height: 100%; /* Certifica-se de que o container ocupa toda a altura disponível */
+	top: 0;
+	left: 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* Centraliza verticalmente */
+	align-items: center; /* Centraliza horizontalmente */
+	overflow: hidden;
+  }
+.testando .text{
+	position: relative;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #1800f3;
+  text-align: center;
+  align-items: center;
+  margin-top: 10%;
+  margin: 0;
+}
+
+.testando .text.first-text {
+	color: rgb(0, 0, 0);
+	font-weight: 300;
+	font-size: 3.3rem;
+	margin-bottom: 10px; /* Adiciona um pequeno espaçamento entre os textos */
+  }
+
+.text.sec-text:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(255, 255, 255);
+	border-left : 2px solid #1606c4;
+	animation : animate 4s steps(12) infinite;
+}
+
+@keyframes animate{
+	40%, 60%{
+		left: calc(100% + 4px);
+	}
+	100%{
+		left: 0%;
+	}
+}
 
 img {
 	pointer-events: none; /* Desativa todos os eventos do ponteiro, incluindo arrastar */
