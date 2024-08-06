@@ -18,15 +18,11 @@ document.addEventListener("DOMContentLoaded", function() {
         link.addEventListener("click", function (e) {
             e.preventDefault();
             const targetId = this.getAttribute("href").substring(1); // Remove o #
-            console.log("Clicked link ID:", targetId);
 
             // Verificar se o ID está no mapeamento
             if (positions[targetId] !== undefined) {
                 const targetPosition = positions[targetId];
                 const currentScroll = window.scrollY;
-                console.log("Current scroll position:", currentScroll);
-                console.log("Target section position:", targetPosition);
-
                 // Usar GSAP para todas as rolagens, tanto para trás quanto para frente
                 gsap.to(window, {
                     scrollTo: { y: targetPosition },
@@ -40,6 +36,34 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+
+
+
+	const secTextElement = document.getElementById('custom-cursor-area');
+    secTextElement.addEventListener('click', function (e) {
+        e.preventDefault(); // Impede o comportamento padrão
+
+        // ID do alvo para onde você quer rolar
+        const targetId = 'contact';
+
+        // Verifique se o ID está no mapeamento
+        if (positions[targetId] !== undefined) {
+            const targetPosition = positions[targetId];
+
+            // Use GSAP para rolar suavemente até a posição do alvo
+            gsap.to(window, {
+                scrollTo: { y: targetPosition },
+                duration: 1, // Duração da animação em segundos
+                ease: "power2.out",
+                onComplete: () => {
+                    // Reative todos os ScrollTriggers após a rolagem
+                    ScrollTrigger.getAll().forEach(trigger => trigger.enable());
+                }
+            });
+        }
+    });
+
+
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -191,3 +215,21 @@ const textLoad = () => {
 	textLoad();
 	setInterval(textLoad, 32000);
 
+	
+document.addEventListener("DOMContentLoaded", function() {
+    const customCursor = document.querySelector(".custom-cursor");
+    const targetArea = document.getElementById("custom-cursor-area");
+
+    targetArea.addEventListener("mouseenter", () => {
+        customCursor.classList.add("show");
+    });
+
+    targetArea.addEventListener("mouseleave", () => {
+        customCursor.classList.remove("show");
+    });
+
+    targetArea.addEventListener("mousemove", (e) => {
+        customCursor.style.left = `${e.clientX}px`;
+        customCursor.style.top = `${e.clientY}px`;
+    });
+});
