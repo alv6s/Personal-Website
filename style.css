@@ -544,7 +544,7 @@ left: 50.8%;
 	background-color: #ffffff00; /* Fundo escuro para o footer */
 	color: #fff; /* Texto branco */
 	text-align: center; /* Centraliza o texto */
-	padding: 0px 0; /* Espaçamento */
+	margin-bottom: 1%;
 
   }
   
@@ -628,7 +628,7 @@ left: 50.8%;
     background: #00000039; /* Cor do polegar da barra de rolagem */
     border-radius: 10px; /* Arredonda os cantos do polegar */
 }
-.content-wrapper2::-webkit-scrollbar-track {
+.content-wrapper::-webkit-scrollbar-track {
     background: #f1f1f195; /* Cor de fundo da trilha da barra de rolagem */
     border-radius: 10px; /* Arredonda os cantos da trilha */
 }
