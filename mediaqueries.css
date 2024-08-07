@@ -20,9 +20,18 @@
 	.contact-form {
 		gap: 1rem; /* Reduz ainda mais o espaçamento em telas menores */
 		padding: 10px; /* Reduz ainda mais o padding em telas menores */
-		
-		
-		
+	
+	  }
+
+	  .modal-content img, .modal-content video {
+		height: 100%;
+		width: auto;
+		max-width: 100%;
+		border-radius: 30px;
+		display: block;
+	  }
+	  .modal-content img{
+		max-height: 50%;
 	  }
 	
 	  .form-group input,
@@ -237,4 +246,5 @@
     width: 12px; /* Largura da barra de rolagem vertical */
     height: 12px; /* Altura da barra de rolagem horizontal (se necessário) */
 }
+
 }
