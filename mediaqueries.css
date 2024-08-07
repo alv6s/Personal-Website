@@ -66,6 +66,18 @@
 	padding: 0px 0; /* Espaçamento */
 
   }
+
+
+	.content-wrapper {
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	overflow-y: auto;
+	gap: 0.6rem;
+	
+	}
+
+
   .social-icon img {
 	width: 32px; /* Ajuste conforme necessário para o tamanho do ícone */
 	height: 32px; /* Ajuste conforme necessário para o tamanho do ícone */
@@ -81,10 +93,64 @@
 	background-color: #e7e7e7; /* Cor de fundo dos botões */
 	transition: background-color 0.3s, transform 0.3s; /* Transição suave */
   }
+  .image-column {
+	flex: 0.6;
+	display: flex;
+	justify-content: center; /* Center the image horizontally */
+	align-items: center; /* Center the image vertically */
+	margin-left: auto;
+	margin-right:auto;
+	order: -1;
+	
+}
+.image-column img {
+    max-width: 45%; /* Adjust this value to control the image size */
+    height: auto;
+    border-radius: 50%; /* Optional: Makes the image circular */
+}
+
+.text-column {
+    flex: 1;
+    text-align: left;
+    padding-right: 1.5rem; /* Espaço entre texto e imagem */
+    overflow-y: auto; /* Adiciona rolagem se necessário */
+    height: 100%; /* Garante que ocupe toda a altura disponível */
+	margin-left: 1.5rem;
+	align-items: left;
+}
+.top-section {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+	gap: 1.6rem; /* Space between the image and text */
+    margin-bottom: 5%; /* Space between the top and bottom sections */
+}
+.bottom-text {
+    width: 90%;
+    box-sizing: border-box;
+    margin-left: 1.5rem;
+    align-items: left;
+	padding-right: 1.5rem;
+	margin-bottom: 4%;
+}
+.resume-button {
+    text-align: center;
+    margin-right: 10%;
+    margin-bottom: 5%;
+}
 }
 
 @media screen and (max-height: 720px) {
 	
+	.content-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		overflow-y: auto;
+		gap: 0.6rem;
+		
+		}
 	.contact-form {
 		width: 92%; /* Garante que o formulário ocupe toda a largura disponível */
 		min-height: 100px;/* Altura do formulário */
@@ -109,7 +175,14 @@
 		min-height: 100px;
 		margin-bottom: 10%;
 	}
-	  
+	.image-column {
+		flex: 0.5;
+		margin-right: 2rem;
+		display: flex;
+		justify-content: center; /* Center the image horizontally */
+		align-items: center; /* Center the image vertically */
+	}
+	
 
   .contact-form::-webkit-scrollbar {
     width: 12px; /* Largura da barra de rolagem vertical */

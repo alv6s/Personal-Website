@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	const positions = {};
     let resizeTimeout; 
 	const links = document.querySelectorAll(".sidebar a, .lowerbar a");
+	const sections = ["about", "projects", "tools", "contact"];
+
+    // Mapeia as posições das seções
+    sections.forEach(section => {
+        positions[section] = document.getElementById(section).offsetTop;
+    });
 
 	positions['about'] = document.getElementById('about').offsetTop;
     positions['projects'] = document.getElementById('projects').offsetTop;
@@ -37,7 +43,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+	window.addEventListener("scroll", () => {
+        let current = "";
 
+        sections.forEach(section => {
+            const sectionTop = positions[section];
+            const sectionHeight = document.getElementById(section).clientHeight;
+            const scrollY = window.scrollY;
+
+            if (scrollY >= sectionTop - sectionHeight / 3 && scrollY < sectionTop + sectionHeight - sectionHeight / 3) {
+                current = section;
+            }
+        });
+
+        links.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").substring(1) === current) {
+                link.classList.add("active");
+            }
+        });
+    });
 
 	const secTextElement = document.getElementById('custom-cursor-area');
     secTextElement.addEventListener('click', function (e) {
@@ -234,6 +259,26 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = positions[section];
+        const sectionHeight = document.getElementById(section).clientHeight;
+        const scrollY = window.scrollY;
+
+        if (scrollY >= sectionTop - sectionHeight / 3 && scrollY < sectionTop + sectionHeight - sectionHeight / 3) {
+            current = section;
+        }
+    });
+
+    links.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").substring(1) === current) {
+            link.classList.add("active");
+        }
+    });
+});
 
 
 

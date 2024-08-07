@@ -288,6 +288,10 @@ a {
   transform: scale(1.1); /* Opcional: aumenta o ícone ao clicar */
 }
 
+.lowerbar-icon.active img {
+    filter: grayscale(0%); /* Colore o ícone ativo */
+}
+
 
 
 .buttons {
@@ -574,4 +578,92 @@ left: 50.8%;
 	font-size: 14px; /* Tamanho da fonte */
 	opacity: 0.4;
   }
- 
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	gap: 2rem;
+	margin-bottom: 10%;
+	margin-right: 5%;
+}
+
+.content-wrapper::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem vertical */
+    height: 12px; /* Altura da barra de rolagem horizontal (se necessário) */
+}
+  
+.content-wrapper::-webkit-scrollbar-thumb {
+    background: #00000039; /* Cor do polegar da barra de rolagem */
+    border-radius: 10px; /* Arredonda os cantos do polegar */
+}
+.content-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f195; /* Cor de fundo da trilha da barra de rolagem */
+    border-radius: 10px; /* Arredonda os cantos da trilha */
+}
+
+/* Top section: text and image */
+.top-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensure both items are centered vertically */
+    margin-bottom: 1%; /* Space between the top and bottom sections */
+}
+
+/* Text column styling */
+.text-column {
+    flex: 1.1;
+    padding-right: 1rem; /* Space between text and image */
+    margin-left: 2rem;
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+}
+
+/* Image column styling */
+.image-column {
+    flex: 1;
+    margin-right: 2rem;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+/* Style for the image */
+.image-column img {
+    max-width: 90%; /* Adjust this value to control the image size */
+    height: auto;
+    border-radius: 50%; /* Optional: Makes the image circular */
+}
+
+/* Bottom text styling */
+.bottom-text {
+    width: 90%;
+    box-sizing: border-box;
+    margin-left: 2rem;
+    align-items: left;
+}
+
+/* Style for the button */
+.resume-button {
+    display: inline-block;
+    margin-left: 2rem; /* Space between the text and button */
+    color: rgb(3, 3, 3);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+    margin-right: 84%;
+    background-color: #ffffff00; /* Space above the button */
+    margin-bottom: 20%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 1.4px;
+}
+
+/* Hover effect for the button */
+.resume-button:hover {
+    color: rgb(106, 106, 106); /* Change this to your desired hover color */
+}
