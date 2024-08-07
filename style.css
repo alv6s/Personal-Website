@@ -155,6 +155,7 @@ section {
 	font-size: 1.5rem; /* Ajusta o tamanho da fonte conforme necessário */
   }
 
+
 p {
   color: rgb(85,85,85);
 }
@@ -179,6 +180,10 @@ nav {
 a {
   text-decoration: none;
   color: black;
+}
+
+h3{
+	margin-left: 8%;
 }
 
 /* Barra Lateral Flutuante */
@@ -587,7 +592,16 @@ left: 50.8%;
 	overflow-x: hidden;
 	gap: 2rem;
 	margin-bottom: 10%;
-	margin-right: 5%;
+	margin-right: 4%;
+}
+.content-wrapper2 {
+    display: flex;
+    flex-direction: column;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	gap: 1rem;
+	margin-bottom: 10%;
+	margin-right: 4%;
 }
 
 .content-wrapper::-webkit-scrollbar {
@@ -600,6 +614,21 @@ left: 50.8%;
     border-radius: 10px; /* Arredonda os cantos do polegar */
 }
 .content-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f195; /* Cor de fundo da trilha da barra de rolagem */
+    border-radius: 10px; /* Arredonda os cantos da trilha */
+}
+
+
+.content-wrapper2::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem vertical */
+    height: 12px; /* Altura da barra de rolagem horizontal (se necessário) */
+}
+  
+.content-wrapper2::-webkit-scrollbar-thumb {
+    background: #00000039; /* Cor do polegar da barra de rolagem */
+    border-radius: 10px; /* Arredonda os cantos do polegar */
+}
+.content-wrapper2::-webkit-scrollbar-track {
     background: #f1f1f195; /* Cor de fundo da trilha da barra de rolagem */
     border-radius: 10px; /* Arredonda os cantos da trilha */
 }
@@ -667,3 +696,45 @@ left: 50.8%;
 .resume-button:hover {
     color: rgb(106, 106, 106); /* Change this to your desired hover color */
 }
+
+
+/* Estilize o container do grid */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 4 colunas, ajuste conforme necessário */
+    gap: 20px 20px; /* 10px entre linhas, 20px entre colunas */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 1rem;
+	margin-bottom: 5%;
+
+}
+
+.skill-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    transition: transform 0.3s ease;
+    width: 100%; /* Ocupa toda a largura da coluna */
+    height: auto; /* Ajusta a altura automaticamente */
+}
+
+.skill-item svg {
+    width: 100%;
+    height: auto;
+    max-width: 100px; /* Ajusta o tamanho máximo do SVG */
+    fill: #000;
+}
+
+
+.skill-item:hover {
+    transform: scale(1.05);
+}
+
