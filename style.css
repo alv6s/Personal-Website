@@ -30,6 +30,7 @@ html, body {
 	width: 100%; /* Garante que o body não exceda a largura da viewport */
 	font-family: "Urbanist", sans-serif;
 	scroll-behavior: smooth;
+	background-color: #f7f7f7;
   }
 
 .testando {
@@ -70,7 +71,7 @@ html, body {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background-color: rgb(255, 255, 255);
+	background-color: #f7f7f7;
 	border-left : 2px solid #1606c4;
 	animation : animate 4s steps(12) infinite;
 }
@@ -146,6 +147,7 @@ section {
 	margin-left: 3.9vw; /* Margem lateral esquerda */
 	margin-top: 1vh; /* Margem superior */
 	margin-right: 3vw; /* Margem lateral direita */
+	color:rgb(0, 0, 0)
   }
 
   .img h2 {
@@ -221,7 +223,7 @@ h3{
   width: 40px;
   height: 40px;
   opacity: 0.5;
-  filter: grayscale(100%); /* Desatura completamente, preto e branco */
+  filter: grayscale(80%); /* Desatura completamente, preto e branco */
   transition: filter 0.3s, transform 0.3s; /* Transição para filter */
 }
 
@@ -233,7 +235,7 @@ h3{
 
 /* Clique */
 .sidebar-icon:active img, .sidebar-icon:active svg {
-  filter: grayscale(0%); /* Garante que a cor completa esteja visível ao clicar */
+  /* Garante que a cor completa esteja visível ao clicar */
   transform: scale(1.1); /* Opcional: aumenta o ícone ao clicar */
   opacity: 1;
 }
@@ -695,8 +697,8 @@ left: 50%;
     cursor: pointer;
     font-size: 1rem;
     text-align: left;
-    margin-right: 84%;
-    background-color: #ffffff00; /* Space above the button */
+    margin-right: 60%;
+    background-color: #8d4b4b00; /* Space above the button */
     margin-bottom: 20%;
     text-decoration: underline;
     text-decoration-style: solid;
