@@ -402,13 +402,12 @@ h3{
     height: 70%;
     background-color: rgba(124, 34, 34, 0);
     border-radius: 40px;
-    margin: 10% auto; /* Centraliza o modal verticalmente */
+    margin: 10% auto;
     display: flex;
-    flex-direction: column; /* Adiciona esta linha para alinhar itens na coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    gap: 1rem; /* Espaço entre os itens */
-
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* Espaço entre os itens */
 }
 
 .media-container {
@@ -416,15 +415,15 @@ h3{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 0%;
 }
 
 .modal-content img,
 .modal-content video {
-    max-width: 100%;
     max-height: 60vh; /* Ajusta a altura máxima */
     border-radius: 40px;
     display: block;
+	margin: 0 auto; /* Centraliza a imagem ou vídeo */
 
 }
 
@@ -451,11 +450,30 @@ h3{
 }
 
 .modal-content p {
-    text-align: left;
+    text-align: center;
     font-size: 1rem;
+	justify-content: center;
+	align-items: center;
+}
+.media-text-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
 }
 
-
+.media-container {
+    width: 35%;
+}
+.intro-text {
+    width: 36%; /* O texto ocupará 40% do container pai */
+    text-align: right;
+    font-size: 1rem;
+	margin-right: 1%;
+	background-color: #000;
+	align-items: center;
+}
   
  .close-btn {
 top: 9%;

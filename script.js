@@ -142,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const projectButtons = document.querySelectorAll('.project-button');
     const modal = document.getElementById('project-modal');
@@ -153,24 +152,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCaption = document.getElementById('modal-caption');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
+    const introText = document.getElementById('intro-text');
 
-    // Dados dos projetos (exemplo com múltiplas mídias por projeto)
-    const projects = {
-        1: [
-            { type: 'video', src: 'assets/g1.mov', caption: 'High Fidelity APP " Prototype made in Figma. 2024.' },
-            { type: 'image', src: 'assets/another-image.png', caption: 'Another Image Description' }
-        ],
-        2: [
-            { type: 'image', src: 'assets/test.png', caption: 'Project 2 Description' }
-        ],
-        // Adicione outros projetos com múltiplas mídias aqui
-    };
-
-    let currentProject = [];
+    let currentProject = {};
     let currentIndex = 0;
+	const projects = {
+		1: {
+			introText: "This project explored and virtually reconstructed ghost buildings in Porto, preserving them in collective memory through augmented reality (AR). It focused on historic structures like Palacete de Monteiro Moreira, Casa dos Vinte e Quatro, and the original Palácio de Cristal. The project involved developing low and high-fidelity prototypes in Figma and utilized tools such as Adobe Photoshop and Autodesk Maya. Additionally, I developed the application using React Native with Expo and TypeScript. The reconstructions aimed to enhance cultural tourism and heritage understanding by offering innovative ways to engage with Porto’s history through 3D modeling and AR.",
+			media: [
+				{ type: 'video', src: 'assets/g1.mov', caption: '' },
+				{ type: 'video', src: 'assets/g1.mov', caption: 'ola tudo bem' },
+			]
+		},
+		2: {
+			introText: 'Texto específico para o Projeto 2.',
+			media: [
+				{ type: 'image', src: 'assets/test.png', caption: 'Project 2 Description' }
+			]
+		},
+		// Adicione outros projetos aqui
+	};
+	
 
     function showMedia(index) {
-        const media = currentProject[index];
+        const media = currentProject.media[index];
         if (media.type === 'image') {
             modalImage.src = media.src;
             modalImage.style.display = 'block';
@@ -186,21 +191,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         modalCaption.textContent = media.caption;
         updateNavigationButtons();
+        updateIntroTextVisibility();
     }
 
     function updateNavigationButtons() {
-        if (currentProject.length > 0) {
+        if (currentProject.media && currentProject.media.length > 0) {
             prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
-            nextBtn.style.display = currentIndex === currentProject.length - 1 ? 'none' : 'block';
+            nextBtn.style.display = currentIndex === currentProject.media.length - 1 ? 'none' : 'block';
+        }
+    }
+
+    function updateIntroTextVisibility() {
+        if (currentProject.media && currentProject.media.length > 0) {
+            introText.style.display = currentIndex === 0 ? 'block' : 'none';
+            introText.innerHTML = `<p>${currentProject.introText}</p>`;
         }
     }
 
     projectButtons.forEach(button => {
         button.addEventListener('click', () => {
             const projectId = button.getAttribute('data-project');
-            currentProject = projects[projectId] || [];
+            currentProject = projects[projectId] || {};
             currentIndex = 0;
-            if (currentProject.length > 0) {
+            if (currentProject.media && currentProject.media.length > 0) {
                 showMedia(currentIndex);
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
@@ -230,19 +243,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     prevBtn.addEventListener('click', () => {
-        if (currentProject.length > 0) {
-            currentIndex = (currentIndex - 1 + currentProject.length) % currentProject.length;
+        if (currentProject.media && currentProject.media.length > 0) {
+            currentIndex = (currentIndex - 1 + currentProject.media.length) % currentProject.media.length;
             showMedia(currentIndex);
         }
     });
 
     nextBtn.addEventListener('click', () => {
-        if (currentProject.length > 0) {
-            currentIndex = (currentIndex + 1) % currentProject.length;
+        if (currentProject.media && currentProject.media.length > 0) {
+            currentIndex = (currentIndex + 1) % currentProject.media.length;
             showMedia(currentIndex);
         }
     });
 });
+
 
 
 const text = document.querySelector(".sec-text");
