@@ -395,39 +395,66 @@ h3{
     -webkit-backdrop-filter: blur(10px); 
 	
   }
-  
   .modal-content {
 	position: absolute;
-	top: 50%;
-	left: 50.8%;
-	max-width: 90%; /* Ajusta a largura máxima ao tamanho do contêiner pai */
-	max-height: 70%;
-	transform: translate(-50%, -50%);
-	width: 500px;
-	height: 700px;
-	background-color: rgba(124, 34, 34, 0);
-	border-radius: 40px;
-	padding: 20px; /* Espaço interno ao redor dos botões */
-	display: flex;
-	align-items: center;
-	flex-direction: column; /* Alinha os itens verticalmente */
-	 /* Centraliza os itens horizontalmente */
-	justify-content: center; /* Centraliza os itens verticalmente */
-	gap: 1rem; /* Adiciona espaçamento entre os elementos filhos */
-  }
-  
-  .modal-content img, .modal-content video {
-	height: 100%;
-	width: auto;
-	border-radius: 40px;
-	display: block;
-  }
-  
-  .modal-content p {
-	margin-left: 0px ;
-	text-align: center;
-	font-size: 1rem;
-  }
+    left: 10%;
+    width: 80%;
+    height: 70%;
+    background-color: rgba(124, 34, 34, 0);
+    border-radius: 40px;
+    margin: 10% auto; /* Centraliza o modal verticalmente */
+    display: flex;
+    flex-direction: column; /* Adiciona esta linha para alinhar itens na coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    gap: 1rem; /* Espaço entre os itens */
+
+}
+
+.media-container {
+	width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.modal-content img,
+.modal-content video {
+    max-width: 100%;
+    max-height: 60vh; /* Ajusta a altura máxima */
+    border-radius: 40px;
+    display: block;
+
+}
+
+.nav-btn {
+	width: 50px;
+	height: 50px;
+    position: absolute;
+    background-color: rgba(181, 86, 86, 0.5);
+    color: white;
+    border: none;
+
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 5%;
+}
+
+.next-btn {
+    right: 5%;
+}
+
+.modal-content p {
+    text-align: left;
+    font-size: 1rem;
+}
+
   
  .close-btn {
 top: 9%;

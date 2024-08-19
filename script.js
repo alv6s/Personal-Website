@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const projectButtons = document.querySelectorAll('.project-button');
     const modal = document.getElementById('project-modal');
@@ -150,37 +151,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalVideo = document.getElementById('modal-video');
     const modalVideoSource = document.getElementById('modal-video-source');
     const modalCaption = document.getElementById('modal-caption');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
 
-    // Dados dos projetos (exemplo)
+    // Dados dos projetos (exemplo com múltiplas mídias por projeto)
     const projects = {
-        1: { type: 'video', src: 'assets/g1.mov', caption: 'High Fidelity APP " Prototype made in Figma. 2024.' },
-        2: { type: 'image', src: 'assets/test.png', caption: 'Project 2 Description' },
-        3: { type: 'video', src: 'assets/project3.mp4', caption: 'Project 3 Description' },
-        4: { type: 'image', src: 'assets/project4.jpg', caption: 'Project 4 Description' },
-        5: { type: 'video', src: 'assets/project5.mp4', caption: 'Project 5 Description' },
-        6: { type: 'image', src: 'assets/project6.jpg', caption: 'Project 6 Description' }
+        1: [
+            { type: 'video', src: 'assets/g1.mov', caption: 'High Fidelity APP " Prototype made in Figma. 2024.' },
+            { type: 'image', src: 'assets/another-image.png', caption: 'Another Image Description' }
+        ],
+        2: [
+            { type: 'image', src: 'assets/test.png', caption: 'Project 2 Description' }
+        ],
+        // Adicione outros projetos com múltiplas mídias aqui
     };
+
+    let currentProject = [];
+    let currentIndex = 0;
+
+    function showMedia(index) {
+        const media = currentProject[index];
+        if (media.type === 'image') {
+            modalImage.src = media.src;
+            modalImage.style.display = 'block';
+            modalVideo.style.display = 'none';
+        } else if (media.type === 'video') {
+            modalVideoSource.src = media.src;
+            modalVideo.style.display = 'block';
+            modalImage.style.display = 'none';
+            modalVideo.play();
+        }
+        modalCaption.textContent = media.caption;
+    }
 
     projectButtons.forEach(button => {
         button.addEventListener('click', () => {
             const projectId = button.getAttribute('data-project');
-            const project = projects[projectId];
-
-            if (project.type === 'image') {
-                modalImage.src = project.src;
-                modalVideo.style.display = 'none';
-                modalImage.style.display = 'block';
-            } else if (project.type === 'video') {
-                modalVideoSource.src = project.src;
-                modalVideo.style.display = 'block';
-                modalImage.style.display = 'none';
-                modalVideo.style.display = 'block'; // Garante que o vídeo é visível
-                modalVideo.play(); // Inicia a reprodução do vídeo
+            currentProject = projects[projectId] || [];
+            currentIndex = 0;
+            if (currentProject.length > 0) {
+                showMedia(currentIndex);
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
             }
-
-            modalCaption.textContent = project.caption;
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Desativa o scroll do body
         });
     });
 
@@ -188,9 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
         modalImage.src = '';
         modalVideoSource.src = '';
-        modalVideo.pause(); // Pausa o vídeo ao fechar o modal
-        modalVideo.currentTime = 0; // Reseta o vídeo ao início
-        document.body.style.overflow = 'auto'; // Reativa o scroll do body
+        modalVideo.pause();
+        modalVideo.currentTime = 0;
+        document.body.style.overflow = 'auto';
     });
 
     window.addEventListener('click', (event) => {
@@ -199,10 +212,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Fechar o modal ao rolar
     window.addEventListener('scroll', () => {
         if (modal.style.display === 'block') {
             closeBtn.click();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentProject.length > 0) {
+            currentIndex = (currentIndex - 1 + currentProject.length) % currentProject.length;
+            showMedia(currentIndex);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentProject.length > 0) {
+            currentIndex = (currentIndex + 1) % currentProject.length;
+            showMedia(currentIndex);
         }
     });
 });
