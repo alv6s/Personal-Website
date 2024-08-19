@@ -23,16 +23,134 @@
 	
 	  }
 
-	  .modal-content img, .modal-content video {
+	/* Estilo para o modal */
+
+	.modal {
+		display: none;  /* Oculta o modal por padrão */
+		position: fixed;
+		z-index: 1000;
+		left: 0;
+		top: 0;
+		width: 100%;
 		height: 100%;
-		width: auto;
-		max-width: 100%;
+		overflow: auto;
+		background-color: rgba(255, 255, 255, 0.672);
+		backdrop-filter: blur(10px); /* Adiciona o efeito de desfoque ao fundo */
+		-webkit-backdrop-filter: blur(10px); 
+		
+	  }
+	  .modal-content {
+		position: absolute;
+		left: 7%;
+		width: 90%;
+		top: 3%;
+		height: 80%;
+		background-color: rgba(124, 34, 34, 0);
+		border-radius: 40px;
+		margin: 10% auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1%; /* Espaço entre os itens */
+	}
+	
+	.modal-icon {
+		width: 19px;
+		height: 19px;
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		transform: translate(50%, -50%);
+	}
+
+	.media-container {
+		width: 100%;
+;		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 0%;
+	}
+	
+	.modal-content img,
+	.modal-content video {
+		max-height: 60vh; /* Ajusta a altura máxima */
 		border-radius: 30px;
+		max-width: 35vh;
 		display: block;
-	  }
-	  .modal-content img{
-		max-height: 50%;
-	  }
+		margin: 0 auto; /* Centraliza a imagem ou vídeo */
+	
+	}
+	
+	.nav-btn {
+		width: 40px;
+		height: 40px;
+		bottom: 10vh;
+		position: absolute;
+		background-color: rgba(255, 255, 255, 0.523);
+		color: white;
+		border: none;
+		box-shadow: 0 -1px 30px rgba(0, 0, 0, 0.066);
+		cursor: pointer;
+		border-radius: 50%;
+		font-size: 2rem;
+		z-index: 1;
+	}
+
+	
+	.prev-btn {
+		left: 1%;
+	}
+	
+	.next-btn {
+		right: 1%;
+	}
+	
+	.modal-content p {
+		text-align: left;
+		font-size: 0.8rem;
+
+		max-height: 60vh; /* Ajusta a altura máxima */
+		width: 50vw;
+	}
+	.media-text-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
+		width: 100%;
+	}
+	
+	.media-container {
+		width: 35%;
+	}
+	.intro-text {
+		width: 100%; /* O texto ocupará 40% do container pai */
+		height: auto;
+		text-align: right;
+		margin-right: 1%;
+		background-color: #dac9c900;
+		align-items: center;
+	}
+	  
+	.close-btn {
+		top: 7%;
+		left: 46%;
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		background-color: rgba(255, 255, 255, 0.523);
+		color: white;
+		border: none;
+		box-shadow: 0 -1px 30px rgba(0, 0, 0, 0.066);
+		cursor: pointer;
+		border-radius: 50%;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+		}
+		
 	
 	  .form-group input,
 	  .form-group textarea {

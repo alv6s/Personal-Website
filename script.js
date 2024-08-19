@@ -156,62 +156,113 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentProject = {};
     let currentIndex = 0;
-	const projects = {
-		1: {
-			introText: "This project explored and virtually reconstructed ghost buildings in Porto, preserving them in collective memory through augmented reality (AR). It focused on historic structures like Palacete de Monteiro Moreira, Casa dos Vinte e Quatro, and the original Palácio de Cristal. The project involved developing low and high-fidelity prototypes in Figma and utilized tools such as Adobe Photoshop and Autodesk Maya. Additionally, I developed the application using React Native with Expo and TypeScript. The reconstructions aimed to enhance cultural tourism and heritage understanding by offering innovative ways to engage with Porto’s history through 3D modeling and AR.",
-			media: [
-				{ type: 'video', src: 'assets/g1.mov', caption: '' },
-				{ type: 'video', src: 'assets/g1.mov', caption: 'ola tudo bem' },
-			]
-		},
-		2: {
-			introText: 'Texto específico para o Projeto 2.',
-			media: [
-				{ type: 'image', src: 'assets/test.png', caption: 'Project 2 Description' }
-			]
-		},
-		// Adicione outros projetos aqui
-	};
-	
+
+    // Define os projetos para mobile e desktop
+    const mobileProjects = {
+        1: {
+            media: [
+                { type: 'text', text: "Texto do projeto 1" },
+                { type: 'video', src: 'assets/project1/g1.mov', caption: '' },
+                { type: 'image', src: 'assets/project1/image.png', caption: 'Low-Fidelity Prototype' },
+            ]
+        },
+        2: {
+            introText: 'Texto específico para o Projeto 2.',
+            media: [
+                { type: 'text-image', text: "Texto do Projeto 2", imageSrc: 'assets/test.png', caption: 'Descrição do Projeto 2' },
+                { type: 'video', src: 'assets/g1.mov', caption: 'Caption 1' },
+                { type: 'video', src: 'assets/g1.mov', caption: 'Caption 2' },
+            ]
+        },
+        // Adicione outros projetos para mobile aqui
+    };
+
+    const desktopProjects = {
+        1: {
+            media: [
+                { type: 'text-video', text: "Texto do Projeto 2", videoSrc: 'assets/project1/g1.mov', caption: '' },
+                { type: 'text', text: "Texto do projeto 1" },
+                { type: 'image', src: 'assets/project1/image.png', caption: 'Low-Fidelity Prototype' },
+            ]
+        },
+        2: {
+            introText: 'Texto específico para o Projeto 2.',
+            media: [
+                { type: 'text-image', text: "Texto do Projeto 2", imageSrc: 'assets/test.png', caption: 'Descrição do Projeto 2' },
+                { type: 'video', src: 'assets/g1.mov', caption: 'Caption 1' },
+                { type: 'video', src: 'assets/g1.mov', caption: 'Caption 2' },
+            ]
+        },
+        // Adicione outros projetos para desktop aqui
+    };
+
+    function getProjects() {
+        return window.innerWidth <= 768 ? mobileProjects : desktopProjects;
+    }
 
     function showMedia(index) {
+        const isMobile = window.innerWidth <= 768;
+        const itemsPerPage = isMobile ? 1 : 1; // Exibe 1 item por página
+
+        // Limpa a exibição atual
+        modalImage.style.display = 'none';
+        modalVideo.style.display = 'none';
+        introText.style.display = 'none';
+
+        // Pausa o vídeo anterior e limpa o source
+        modalVideo.pause();
+        modalVideoSource.src = '';
+        modalVideo.load();
+
+        // Calcula o índice máximo permitido
         const media = currentProject.media[index];
-        if (media.type === 'image') {
-            modalImage.src = media.src;
-            modalImage.style.display = 'block';
-            modalVideo.style.display = 'none';
-        } else if (media.type === 'video') {
-            modalVideoSource.src = media.src;
-            modalVideo.style.display = 'block';
-            modalImage.style.display = 'none';
-            modalVideo.play();
-            modalVideo.loop = true; // Garante que o vídeo fique em loop
-            modalVideo.controls = false; // Remove os controles padrão
-            modalVideo.muted = true; // Desativa o áudio do vídeo
+        if (media) {
+            if (media.type === 'image') {
+                modalImage.src = media.src;
+                modalImage.style.display = 'block';
+            } else if (media.type === 'video') {
+                modalVideoSource.src = media.src;
+                modalVideo.style.display = 'block';
+                modalVideo.play();
+                modalVideo.loop = true;
+                modalVideo.controls = false;
+                modalVideo.muted = true;
+            } else if (media.type === 'text') {
+                introText.innerHTML = `<p>${media.text}</p>`;
+                introText.style.display = 'block';
+            } else if (media.type === 'text-image') {
+                introText.innerHTML = `<p>${media.text}</p>`;
+                introText.style.display = 'block';
+                modalImage.src = media.imageSrc;
+                modalImage.style.display = 'block';
+            } else if (media.type === 'text-video') {
+                introText.innerHTML = `<p>${media.text}</p>`;
+                introText.style.display = 'block';
+                modalVideoSource.src = media.videoSrc;
+                modalVideo.style.display = 'block';
+                modalVideo.play();
+                modalVideo.loop = true;
+                modalVideo.controls = false;
+                modalVideo.muted = false;
+            }
+            modalCaption.textContent = media.caption || '';
         }
-        modalCaption.textContent = media.caption;
+
         updateNavigationButtons();
-        updateIntroTextVisibility();
     }
 
     function updateNavigationButtons() {
-        if (currentProject.media && currentProject.media.length > 0) {
-            prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
-            nextBtn.style.display = currentIndex === currentProject.media.length - 1 ? 'none' : 'block';
-        }
-    }
+        const isMobile = window.innerWidth <= 768;
+        const itemsPerPage = isMobile ? 1 : 1;
 
-    function updateIntroTextVisibility() {
-        if (currentProject.media && currentProject.media.length > 0) {
-            introText.style.display = currentIndex === 0 ? 'block' : 'none';
-            introText.innerHTML = `<p>${currentProject.introText}</p>`;
-        }
+        prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+        nextBtn.style.display = (currentIndex + itemsPerPage >= currentProject.media.length) ? 'none' : 'block';
     }
 
     projectButtons.forEach(button => {
         button.addEventListener('click', () => {
             const projectId = button.getAttribute('data-project');
-            currentProject = projects[projectId] || {};
+            currentProject = getProjects()[projectId] || {};
             currentIndex = 0;
             if (currentProject.media && currentProject.media.length > 0) {
                 showMedia(currentIndex);
@@ -224,9 +275,9 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
         modalImage.src = '';
-        modalVideoSource.src = '';
         modalVideo.pause();
-        modalVideo.currentTime = 0;
+        modalVideoSource.src = '';
+        modalVideo.load();
         document.body.style.overflow = 'auto';
     });
 
@@ -244,19 +295,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     prevBtn.addEventListener('click', () => {
         if (currentProject.media && currentProject.media.length > 0) {
-            currentIndex = (currentIndex - 1 + currentProject.media.length) % currentProject.media.length;
+            currentIndex = Math.max(0, currentIndex - 1);
             showMedia(currentIndex);
         }
     });
 
     nextBtn.addEventListener('click', () => {
         if (currentProject.media && currentProject.media.length > 0) {
-            currentIndex = (currentIndex + 1) % currentProject.media.length;
+            currentIndex = Math.min(currentProject.media.length - 1, currentIndex + 1);
             showMedia(currentIndex);
         }
     });
-});
 
+    window.addEventListener('resize', () => {
+        showMedia(currentIndex);
+        updateNavigationButtons();
+    });
+});
 
 
 const text = document.querySelector(".sec-text");

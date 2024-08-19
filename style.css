@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 ::-webkit-scrollbar {
 	width: 15px;
@@ -191,7 +192,7 @@ h3{
 /* Barra Lateral Flutuante */
 .sidebar {
   position: fixed;
-  right: 30px;
+  right: 2%;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -381,6 +382,8 @@ h3{
 }
 
   /* Estilo para o modal */
+
+
   .modal {
 	display: none;  /* Oculta o modal por padrão */
 	position: fixed;
@@ -389,8 +392,8 @@ h3{
 	top: 0;
 	width: 100%;
 	height: 100%;
-	overflow: auto;
-	background-color: rgba(255, 255, 255, 0.367);
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.58);
 	backdrop-filter: blur(10px); /* Adiciona o efeito de desfoque ao fundo */
     -webkit-backdrop-filter: blur(10px); 
 	
@@ -399,6 +402,8 @@ h3{
 	position: absolute;
     left: 10%;
     width: 80%;
+	
+	top: 1%;
     height: 70%;
     background-color: rgba(124, 34, 34, 0);
     border-radius: 40px;
@@ -407,7 +412,7 @@ h3{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem; /* Espaço entre os itens */
+	gap: 1%;
 }
 
 .media-container {
@@ -418,10 +423,18 @@ h3{
     margin-bottom: 0%;
 }
 
-.modal-content img,
 .modal-content video {
     max-height: 60vh; /* Ajusta a altura máxima */
-    border-radius: 40px;
+	max-width: 60vh;
+    border-radius: 34px;
+    display: block;
+	margin: 0 auto; /* Centraliza a imagem ou vídeo */
+
+}
+.modal-content img {
+    max-height: 60vh; /* Ajusta a altura máxima */
+	max-width: 60vh;
+    border-radius: 10px;
     display: block;
 	margin: 0 auto; /* Centraliza a imagem ou vídeo */
 
@@ -430,11 +443,12 @@ h3{
 .nav-btn {
 	width: 50px;
 	height: 50px;
+	bottom: 5%;
     position: absolute;
-    background-color: rgba(181, 86, 86, 0.5);
+    background-color: rgb(255, 255, 255);
     color: white;
     border: none;
-
+	box-shadow: 0 -1px 30px rgba(0, 0, 0, 0.066);
     cursor: pointer;
     border-radius: 50%;
     font-size: 2rem;
@@ -449,8 +463,20 @@ h3{
     right: 5%;
 }
 
+.modal-icon {
+	width: 24px;
+	height: 25px;
+	justify-content: center;
+	align-items: center;
+}
+.modal2-icon {
+	width: 30px;
+	height: 30px;
+	justify-content: center;
+	align-items: center;
+}
 .modal-content p {
-    text-align: center;
+    text-align: left;
     font-size: 1rem;
 	justify-content: center;
 	align-items: center;
@@ -467,20 +493,29 @@ h3{
     width: 35%;
 }
 .intro-text {
-    width: 36%; /* O texto ocupará 40% do container pai */
+	max-width: 30%;
+ /* O texto ocupará 40% do container pai */
+	height: auto;
     text-align: right;
     font-size: 1rem;
-	margin-right: 1%;
-	background-color: #000;
+	margin-right: 10%;
+	background-color: #ffffff00;
 	align-items: center;
 }
   
  .close-btn {
-top: 9%;
-left: 50%;
-  position: relative;
-  font-size: 2rem;
+top: 8%;
+left: 47.5%;
 
+  position: absolute;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  color: white;
+  margin-bottom: 10%;
+  box-shadow: 0 -1px 30px rgba(0, 0, 0, 0.066);
+  
   border: none; /* Remove a borda padrão */
   border-radius: 50%;
   color: #00000027;
@@ -624,6 +659,7 @@ left: 50%;
 	background-color: #e7e7e7; /* Cor de fundo dos botões */
 	transition: background-color 0.3s, transform 0.3s; /* Transição suave */
   }
+
   
   .social-icon img {
 	width: 38px; /* Ajuste conforme necessário para o tamanho do ícone */
