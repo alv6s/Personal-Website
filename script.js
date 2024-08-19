@@ -180,8 +180,19 @@ document.addEventListener('DOMContentLoaded', () => {
             modalVideo.style.display = 'block';
             modalImage.style.display = 'none';
             modalVideo.play();
+            modalVideo.loop = true; // Garante que o vídeo fique em loop
+            modalVideo.controls = false; // Remove os controles padrão
+            modalVideo.muted = true; // Desativa o áudio do vídeo
         }
         modalCaption.textContent = media.caption;
+        updateNavigationButtons();
+    }
+
+    function updateNavigationButtons() {
+        if (currentProject.length > 0) {
+            prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+            nextBtn.style.display = currentIndex === currentProject.length - 1 ? 'none' : 'block';
+        }
     }
 
     projectButtons.forEach(button => {
