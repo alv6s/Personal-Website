@@ -161,15 +161,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileProjects = {
         1: {
             media: [
-                { type: 'text', text: "Texto do projeto 1" },
+                { type: 'text', text: "This project explored and virtually reconstructed ghost buildings in Porto, preserving them in collective memory through augmented reality (AR). It focused on historic structures like Palacete de Monteiro Moreira, Casa dos Vinte e Quatro, and the original Palácio de Cristal. The project involved developing low and high-fidelity prototypes in Figma and utilized tools such as Adobe Photoshop and Autodesk Maya.<br><br> Additionally, the application was developed using React Native with Expo and TypeScript.<br>The reconstructions aimed to enhance cultural tourism and heritage understanding by offering innovative ways to engage with Porto’s history through 3D modeling and AR." },
                 { type: 'video', src: 'assets/project1/g1.mov', caption: '' },
-                { type: 'image', src: 'assets/project1/image.png', caption: 'Low-Fidelity Prototype' },
+                { type: 'image', src: 'assets/project1/image.png', caption: 'Low-Fidelity prototype - Figma' },
+				{ type: 'image', src: 'assets/project1/hf.png', caption: 'High-Fidelity prototype - Figma' },
+				{ type: 'image', src: 'assets/project1/se.png', caption: 'Image Research' },
+				{ type: 'image', src: 'assets/project1/space.png', caption: '3D Reconstruction of Praça D. Pedro in 1892 ' }
+		
             ]
         },
         2: {
             introText: 'Texto específico para o Projeto 2.',
             media: [
-                { type: 'text-image', text: "Texto do Projeto 2", imageSrc: 'assets/test.png', caption: 'Descrição do Projeto 2' },
+				{ type: 'text', text: "The game for the \"Skills 4 NextGen\" project aims to enhance communication between deaf students, interpreters, and teachers through an educational dynamic. Using Figma, our team developed both low-fidelity and high-fidelity prototypes. The low-fidelity prototype used basic shapes and grayscale to outline the game’s interface, while the high-fidelity prototype featured detailed visuals and interactive elements to closely simulate the final user experience. This iterative process allowed us to refine the game’s design and better achieve its educational goals."},
+                { type: 'image', imageSrc: 'assets/test.png', caption: 'Caption 1'},
                 { type: 'video', src: 'assets/g1.mov', caption: 'Caption 1' },
                 { type: 'video', src: 'assets/g1.mov', caption: 'Caption 2' },
             ]
@@ -180,15 +185,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const desktopProjects = {
         1: {
             media: [
-                { type: 'text-video', text: "Texto do Projeto 2", videoSrc: 'assets/project1/g1.mov', caption: '' },
-                { type: 'text', text: "Texto do projeto 1" },
-                { type: 'image', src: 'assets/project1/image.png', caption: 'Low-Fidelity Prototype' },
-            ]
+                { type: 'text-video', text: "This project explored and virtually reconstructed ghost buildings in Porto, preserving them in collective memory through augmented reality (AR). It focused on historic structures like Palacete de Monteiro Moreira, Casa dos Vinte e Quatro, and the original Palácio de Cristal. The project involved developing low and high-fidelity prototypes in Figma and utilized tools such as Adobe Photoshop and Autodesk Maya.<br><br> Additionally, the application was developed using React Native with Expo and TypeScript.<br>The reconstructions aimed to enhance cultural tourism and heritage understanding by offering innovative ways to engage with Porto’s history through 3D modeling and AR.", videoSrc: 'assets/project1/g1.mov', caption: '' },
+                { type: 'image', src: 'assets/project1/image.png', caption: 'Low-Fidelity prototype - Figma' },
+				{ type: 'image', src: 'assets/project1/hf.png', caption: 'High-Fidelity prototype - Figma' },
+				{ type: 'image', src: 'assets/project1/se.png', caption: 'Image Research' },
+				{ type: 'image', src: 'assets/project1/space.png', caption: '3D Reconstruction of Praça D. Pedro in 1892 ' },
+			
+			]
         },
         2: {
-            introText: 'Texto específico para o Projeto 2.',
             media: [
-                { type: 'text-image', text: "Texto do Projeto 2", imageSrc: 'assets/test.png', caption: 'Descrição do Projeto 2' },
+                { type: 'text-image', text: "The game for the \"Skills 4 NextGen\" project aims to enhance communication between deaf students, interpreters, and teachers through an educational dynamic. Using Figma, our team developed both low-fidelity and high-fidelity prototypes. The low-fidelity prototype used basic shapes and grayscale to outline the game’s interface, while the high-fidelity prototype featured detailed visuals and interactive elements to closely simulate the final user experience. This iterative process allowed us to refine the game’s design and better achieve its educational goals.", imageSrc: 'assets/test.png', caption: 'Descrição do Projeto 2' },
                 { type: 'video', src: 'assets/g1.mov', caption: 'Caption 1' },
                 { type: 'video', src: 'assets/g1.mov', caption: 'Caption 2' },
             ]

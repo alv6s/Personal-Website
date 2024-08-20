@@ -433,7 +433,7 @@ h3{
 }
 .modal-content img {
     max-height: 60vh; /* Ajusta a altura máxima */
-	max-width: 60vh;
+	max-width: 80vh;
     border-radius: 10px;
     display: block;
 	margin: 0 auto; /* Centraliza a imagem ou vídeo */
