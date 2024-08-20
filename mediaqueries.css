@@ -8,7 +8,7 @@
 	.img {
 		position: relative;
 		top: 44%;
-		left: 47.6%;
+		left: 50%;
 		max-width: 90%; 
 		max-height: 70%;
 
@@ -250,6 +250,7 @@
 	
 	}
 
+
   .social-icon img {
 	width: 32px;
 	height: 32px;
@@ -311,7 +312,11 @@
     margin-right: 10%;
     margin-bottom: 5%;
 }
+.skills-container {
 
+	margin-left: 2.5%;
+	margin-right: 0%;
+}
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 

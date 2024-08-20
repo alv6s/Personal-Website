@@ -796,7 +796,8 @@ left: 47.5%;
 
 
 .skills-container {
-    display: flex;
+
+	margin-right: 1%;
     justify-content: center;
     align-items: center;
     padding: 1rem;
@@ -805,7 +806,7 @@ left: 47.5%;
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); 
+    grid-template-columns: repeat(5, 1fr); 
     gap: 20px 20px; 
     width: 100%;
     max-width: 1200px;
