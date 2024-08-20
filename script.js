@@ -320,6 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalVideo.style.display = 'block';
                 modalVideo.play();
                 modalVideo.loop = true;
+				modalVideo.controlsList = 'nodownload';
                 modalVideo.controls = false;
                 modalVideo.muted = false;
             } else if (media.type === 'text') {
