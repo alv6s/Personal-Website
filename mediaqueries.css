@@ -18,15 +18,15 @@
 		margin-right: 4vw;
 	}
 	.contact-form {
-		gap: 1rem; /* Reduz ainda mais o espaçamento em telas menores */
-		padding: 10px; /* Reduz ainda mais o padding em telas menores */
+		gap: 1rem;
+		padding: 10px;
 	
 	  }
 
-	/* Estilo para o modal */
+	
 
 	.modal {
-		display: none;  /* Oculta o modal por padrão */
+		display: none;
 		position: fixed;
 		z-index: 1000;
 		left: 0;
@@ -35,7 +35,7 @@
 		height: 100%;
 		overflow: auto;
 		background-color: rgba(255, 255, 255, 0.672);
-		backdrop-filter: blur(10px); /* Adiciona o efeito de desfoque ao fundo */
+		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px); 
 		
 	  }
@@ -52,7 +52,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 1%; /* Espaço entre os itens */
+		gap: 1%;
 	}
 	
 	.modal-icon {
@@ -74,20 +74,20 @@
 	}
 	
 	.modal-content video {
-		max-height: 60vh; /* Ajusta a altura máxima */
+		max-height: 60vh;
 		border-radius: 30px;
 		max-width: 35vh;
 		display: block;
-		margin: 0 auto; /* Centraliza a imagem ou vídeo */
+		margin: 0 auto;
 	
 	}
 
 	.modal-content img{
-		max-height: 60vh; /* Ajusta a altura máxima */
+		max-height: 60vh;
 		border-radius: 10px;
 		max-width: 45vh;
 		display: block;
-		margin: 0 auto; /* Centraliza a imagem ou vídeo */
+		margin: 0 auto;
 	
 	}
 	
@@ -116,10 +116,10 @@
 	}
 	
 	.modal-content p {
-		text-align: left;
+		text-align: center;
 		font-size: 0.8rem;
 
-		max-height: 60vh; /* Ajusta a altura máxima */
+		max-height: 60vh;
 		width: 50vw;
 	}
 	.media-text-container {
@@ -134,12 +134,28 @@
 		width: 35%;
 	}
 	.intro-text {
-		width: 100%; /* O texto ocupará 40% do container pai */
+		width: 100%;
 		height: auto;
 		text-align: right;
 		margin-right: 1%;
 		background-color: #dac9c900;
 		align-items: center;
+	}
+	.modal-content video {
+		max-height: 55vh;
+		max-width: 75vw;
+		border-radius: 20px;
+		display: block;
+		margin: 0 auto;
+	
+	}
+	.modal-content img {
+		max-height: 55vh;
+		max-width: 75vw;
+		border-radius: 10px;
+		display: block;
+		margin: 0 auto;
+	
 	}
 	  
 	.close-btn {
@@ -162,12 +178,12 @@
 	
 	  .form-group input,
 	  .form-group textarea {
-		font-size: 0.6rem; /* Reduz ainda mais o tamanho da fonte em telas menores */
+		font-size: 0.6rem;
 	  }
 	
 	  .submit-btn {
 		padding: 8px 12px;
-		width: 50%; /* Ajusta a largura do botão em telas menores */
+		width: 50%;
 	  }
 	  .project-button {
 		font-weight: bold;
@@ -186,80 +202,78 @@
 
 	  .social-media {
 		display: flex;
-		justify-content: center; /* Centraliza horizontalmente */
-		gap: 15px; /* Espaço entre os ícones */
-		margin-bottom: 10px; /* Espaço abaixo dos ícones */
-		padding-bottom: 1.5rem; /* Espaço interno abaixo dos ícones */
+		justify-content: center;
+		gap: 15px;
+		margin-bottom: 10px;
+		padding-bottom: 1.5rem;
 	  }
 	  
   .footer {
 	width: 100%;
-	height: 120px; /* Ajuste conforme necessário para o footer */
-	background-color: #ffffff00; /* Fundo escuro para o footer */
-	color: #fff; /* Texto branco */
-	text-align: center; /* Centraliza o texto */
-	margin-bottom: 10% /* Espaçamento */
+	height: 120px;
+	background-color: #ffffff00;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 10%;
 
   }
-
 
 	.content-wrapper {
     display: flex;
     flex-direction: column;
-	justify-content: center;
+
 	overflow-y: auto;
 	gap: 0.6rem;
 	
 	}
 
-
   .social-icon img {
-	width: 32px; /* Ajuste conforme necessário para o tamanho do ícone */
-	height: 32px; /* Ajuste conforme necessário para o tamanho do ícone */
-	fill: #fff; /* Ajusta a cor do ícone se necessário */
+	width: 32px;
+	height: 32px;
+	fill: #fff;
   }
   .social-icon {
 	display: flex;
 	align-items: center;
-	justify-content: center; /* Centraliza o conteúdo dentro do botão */
-	width: 70px; /* Largura dos botões */
-	height: 70px; /* Altura dos botões */
-	border-radius: 50%; /* Botões redondos */
-	background-color: #e7e7e7; /* Cor de fundo dos botões */
-	transition: background-color 0.3s, transform 0.3s; /* Transição suave */
+	justify-content: center;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: #e7e7e7;
+	transition: background-color 0.3s, transform 0.3s;
   }
   .image-column {
 	flex: 0.6;
 	display: flex;
-	justify-content: center; /* Center the image horizontally */
-	align-items: center; /* Center the image vertically */
+	justify-content: center;
+	align-items: center;
 	margin-left: auto;
 	margin-right:auto;
 	order: -1;
 	
 }
 .image-column img {
-    max-width: 45%; /* Adjust this value to control the image size */
+    max-width: 45%; 
     height: auto;
-    border-radius: 50%; /* Optional: Makes the image circular */
+    border-radius: 50%; 
 }
 
 .text-column {
     flex: 1;
     text-align: left;
-    padding-right: 1.5rem; /* Espaço entre texto e imagem */
-    overflow-y: auto; /* Adiciona rolagem se necessário */
-    height: 100%; /* Garante que ocupe toda a altura disponível */
+    padding-right: 1.5rem; 
+    overflow-y: auto; 
+    height: 100%; 
 	margin-left: 1.5rem;
 	align-items: left;
 }
 .top-section {
     display: flex;
-    flex-direction: column; /* Arrange items in a column */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-	gap: 1.6rem; /* Space between the image and text */
-    margin-bottom: 5%; /* Space between the top and bottom sections */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+	gap: 1.6rem; 
+    margin-bottom: 5%; 
 }
 .bottom-text {
     width: 90%;
@@ -277,8 +291,8 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 colunas, ajuste conforme necessário */
-    gap: 10px 10px; /* 10px entre linhas, 20px entre colunas */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px 10px; 
     width: 100%;
     max-width: 1300px;
 	margin-bottom: 8%;
@@ -290,8 +304,8 @@
     align-items: center;
     background-color: none;
     transition: transform 0.3s ease;
-    width: 70%; /* Ocupa toda a largura da coluna */
-    height: auto; /* Ajusta a altura automaticamente */
+    width: 70%; 
+    height: auto; 
 }
 
 
@@ -303,7 +317,7 @@
 	.content-wrapper {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-start;
 		gap: 0.6rem;
 		overflow-y: auto;
 		margin-left: 4%;
@@ -311,7 +325,6 @@
 		.content-wrapper2 {
 			display: flex;
 			flex-direction: column;
-			overflow-y: hidden;
 			overflow-x: hidden;
 			gap: 1rem;
 			margin-bottom: 10%;
@@ -336,26 +349,26 @@
 			
 		  }
 	.contact-form {
-		width: 92%; /* Garante que o formulário ocupe toda a largura disponível */
-		min-height: 100px;/* Altura do formulário */
+		width: 92%; 
+		min-height: 100px;
 		display: flex;
 		flex-direction: column;
 		align-self: center;
 		justify-content: center;
-		gap: 0.5rem; /* Espaçamento entre os campos do formulário */
-		box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
-		padding: 10px; /* Adiciona padding interno para espaçamento *//* Arredonda os cantos da card */
-		margin-bottom: 5%; /* Espaçamento inferior */
-		overflow-y: auto; /* Adiciona barra de rolagem vertical */
+		gap: 0.5rem; 
+		box-sizing: border-box; 
+		padding: 10px; 
+		margin-bottom: 5%; 
+		overflow-y: auto; 
 		
 	  }
 
 	  .buttons {
 		display: flex;
-		flex-direction: column; /* Alinha os botões verticalmente em uma coluna */
-		align-items: center; /* Centraliza os botões horizontalmente dentro do contêiner */
-		gap: 0.5rem; /* Espaçamento entre os botões */
-		width: 96%; /* Garante que o contêiner ocupe toda a largura disponível */
+		flex-direction: column; 
+		align-items: center; 
+		gap: 0.5rem; 
+		width: 96%; 
 		min-height: 100px;
 		margin-bottom: 10%;
 	}
@@ -363,14 +376,39 @@
 		flex: 0.5;
 		margin-right: 2rem;
 		display: flex;
-		justify-content: center; /* Center the image horizontally */
-		align-items: center; /* Center the image vertically */
+		justify-content: center; 
+		align-items: center; 
 	}
 	
 
   .contact-form::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem vertical */
-    height: 12px; /* Altura da barra de rolagem horizontal (se necessário) */
+    width: 12px;
+    height: 12px;
+}
+
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #cccccc96;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.content-wrapper2::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+  
+.content-wrapper2::-webkit-scrollbar-thumb {
+    background: #00000039;
+    border-radius: 10px;
+}
+.content-wrapper2:-webkit-scrollbar-track {
+    background: #f1f1f195;
+    border-radius: 10px;
 }
 
 }

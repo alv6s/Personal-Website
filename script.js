@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (positions[targetId] !== undefined) {
                 const targetPosition = positions[targetId];
                 const currentScroll = window.scrollY;
-                // Usar GSAP para todas as rolagens, tanto para trás quanto para frente
                 gsap.to(window, {
                     scrollTo: { y: targetPosition },
                     duration: 1, // Duração da animação em segundos
@@ -171,13 +170,48 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         2: {
-            introText: 'Texto específico para o Projeto 2.',
             media: [
-				{ type: 'text', text: "The game for the \"Skills 4 NextGen\" project aims to enhance communication between deaf students, interpreters, and teachers through an educational dynamic. Using Figma, our team developed both low-fidelity and high-fidelity prototypes. The low-fidelity prototype used basic shapes and grayscale to outline the game’s interface, while the high-fidelity prototype featured detailed visuals and interactive elements to closely simulate the final user experience. This iterative process allowed us to refine the game’s design and better achieve its educational goals."},
-                { type: 'image', imageSrc: 'assets/test.png', caption: 'Caption 1'},
-                { type: 'video', src: 'assets/g1.mov', caption: 'Caption 1' },
-                { type: 'video', src: 'assets/g1.mov', caption: 'Caption 2' },
+				{ type: 'text', text: "The game for the \"Skills 4 NextGen\" project aims to enhance communication between deaf students, interpreters, and teachers through an educational dynamic. <br><br>Using Figma, our team developed both low-fidelity and high-fidelity prototypes.<br>The low-fidelity prototype used basic shapes and grayscale to outline the game’s interface, while the high-fidelity prototype featured detailed visuals and interactive elements to closely simulate the final user experience.<br>This iterative process allowed us to refine the game’s design and better achieve its educational goals."},
+				{ type: 'video', src: 'assets/project2/game2.mov', caption: 'Student\'s Flow' },
+				{ type: 'video', src: 'assets/project2/game1.mov', caption: 'Professor\'s Flow' },
+                { type: 'image', src: 'assets/project2/s1.png', caption: 'Wireflows' },
+				{ type: 'image', src: 'assets/project2/s2.png', caption: 'Low-Fidelity prototype' },
+				{ type: 'image', src: 'assets/project2/s3.png', caption: 'High-Fidelity prototype' },
             ]
+        },
+		3: {
+            media: [
+				{ type: 'text', text: "This project is a basic shell program created as a school assignment at 42.<br>It's intended to provide core shell functionalities such as command execution, history management, input/output redirection, and more.<br><br>With a minimalist design, is designed as a learning exercise for working with system calls, processes, and various Unix commands."},
+				{ type: 'video', src: 'assets/project3/minishell.mov', caption: '' },
+              ]
+        },
+		4: {
+            media: [
+				{ type: 'video', src: 'assets/project4/a00.mp4', caption: 'Animation Project - Jumping Rooster'},
+				{ type: 'image', src: 'assets/project4/a02.png', caption: 'Jumping Rooster - Character UV\'s and Texture'},
+				{ type: 'image', src: 'assets/project4/a03.png', caption: 'Jumping Rooster - Character views'},
+				{ type: 'image', src: 'assets/project4/a01.png', caption: 'Jumping Rooster - Video Editing'},
+                { type: 'image', src: 'assets/project4/a1.png', caption: 'Praça D. Pedro in 1892 - 3D Reconstruction'},
+                { type: 'image', src: 'assets/project4/a2.png', caption: 'Casa dos Vinte e Quatro - 3D Reconstruction'},
+				{ type: 'image', src: 'assets/project4/a3.png', caption: 'UV Texture Mapping Example'},
+				{ type: 'image', src: 'assets/project4/a4.png', caption: 'Texture Development - Adobe Substance Painter'},
+				{ type: 'image', src: 'assets/project4/a5.png', caption: 'Paços do Concelho - 3D Reconstruction'},
+				{ type: 'image', src: 'assets/project4/a6.png', caption: 'Palácio de Cristal - 3D Reconstruction'},
+				{ type: 'image', src: 'assets/project4/a7.png', caption: 'Render example using Arnold - Paços do Concelho'},
+				{ type: 'image', src: 'assets/project4/a8.png', caption: 'Render example using Arnold - Casa dos Vinte e Quatro'},
+            ]
+        },
+		5: {
+            media: [
+				{ type: 'image', src: 'assets/project5/ENTRA1.png', caption: 'Brand and product design for a wine surprise box, offering a curated experience.'},
+				{ type: 'image', src: 'assets/project5/entra2.png', caption: 'Visual identity, ads, and a Shopify site for a wine surprise box project.'},
+            ]
+        },
+		6: {
+            media: [
+				{ type: 'text', text: "So long involves the development of a basic 2D game as part of the 42 code school curriculum.<br><br>The project focuses on working with textures, sprites, and core gameplay mechanics.<br>It\’s built using the MiniLibX graphical library and includes the implementation of various features like window management, event handling, map rendering, and character movement."},
+				{ type: 'video', src: 'assets/project6/solong.mov', caption: ''},
+				 ]
         },
         // Adicione outros projetos para mobile aqui
     };
@@ -186,8 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
         1: {
             media: [
                 { type: 'text-video', text: "This project explored and virtually reconstructed ghost buildings in Porto, preserving them in collective memory through augmented reality (AR). It focused on historic structures like Palacete de Monteiro Moreira, Casa dos Vinte e Quatro, and the original Palácio de Cristal. The project involved developing low and high-fidelity prototypes in Figma and utilized tools such as Adobe Photoshop and Autodesk Maya.<br><br> Additionally, the application was developed using React Native with Expo and TypeScript.<br>The reconstructions aimed to enhance cultural tourism and heritage understanding by offering innovative ways to engage with Porto’s history through 3D modeling and AR.", videoSrc: 'assets/project1/g1.mov', caption: '' },
-                { type: 'image', src: 'assets/project1/image.png', caption: 'Low-Fidelity prototype - Figma' },
-				{ type: 'image', src: 'assets/project1/hf.png', caption: 'High-Fidelity prototype - Figma' },
+                { type: 'image', src: 'assets/project1/image.png', caption: 'Low-Fidelity prototype' },
+				{ type: 'image', src: 'assets/project1/hf.png', caption: 'High-Fidelity prototype' },
 				{ type: 'image', src: 'assets/project1/se.png', caption: 'Image Research' },
 				{ type: 'image', src: 'assets/project1/space.png', caption: '3D Reconstruction of Praça D. Pedro in 1892 ' },
 			
@@ -195,10 +229,44 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         2: {
             media: [
-                { type: 'text-image', text: "The game for the \"Skills 4 NextGen\" project aims to enhance communication between deaf students, interpreters, and teachers through an educational dynamic. Using Figma, our team developed both low-fidelity and high-fidelity prototypes. The low-fidelity prototype used basic shapes and grayscale to outline the game’s interface, while the high-fidelity prototype featured detailed visuals and interactive elements to closely simulate the final user experience. This iterative process allowed us to refine the game’s design and better achieve its educational goals.", imageSrc: 'assets/test.png', caption: 'Descrição do Projeto 2' },
-                { type: 'video', src: 'assets/g1.mov', caption: 'Caption 1' },
-                { type: 'video', src: 'assets/g1.mov', caption: 'Caption 2' },
+                { type: 'text-video', text: "The game for the \"Skills 4 NextGen\" project aims to enhance communication between deaf students, interpreters, and teachers through an educational dynamic. <br><br>Using Figma, our team developed both low-fidelity and high-fidelity prototypes.<br>The low-fidelity prototype used basic shapes and grayscale to outline the game’s interface, while the high-fidelity prototype featured detailed visuals and interactive elements to closely simulate the final user experience.<br>This iterative process allowed us to refine the game’s design and better achieve its educational goals.", videoSrc: 'assets/project2/game2.mov', caption: ''},
+                { type: 'video', src: 'assets/project2/game1.mov', caption: 'Professor\'s Flow' },
+                { type: 'image', src: 'assets/project2/s1.png', caption: 'Wireflows' },
+				{ type: 'image', src: 'assets/project2/s2.png', caption: 'Low-Fidelity prototype' },
+				{ type: 'image', src: 'assets/project2/s3.png', caption: 'High-Fidelity prototype' },
             ]
+        },
+		3: {
+            media: [
+                { type: 'text-video', text: "This project is a basic shell program created as a school assignment at 42.<br>It's intended to provide core shell functionalities such as command execution, history management, input/output redirection, and more.<br><br>With a minimalist design, is designed as a learning exercise for working with system calls, processes, and various Unix commands.", videoSrc: 'assets/project3/minishell.mov', caption: ''},
+            ]
+        },
+		4: {
+            media: [
+				{ type: 'video', src: 'assets/project4/a00.mp4', caption: 'Animation Project - Jumping Rooster'},
+				{ type: 'image', src: 'assets/project4/a02.png', caption: 'Jumping Rooster - Character UV\'s and Texture'},
+				{ type: 'image', src: 'assets/project4/a03.png', caption: 'Jumping Rooster - Character views'},
+				{ type: 'image', src: 'assets/project4/a01.png', caption: 'Jumping Rooster - Video Editing'},
+                { type: 'image', src: 'assets/project4/a1.png', caption: 'Praça D. Pedro in 1892 - 3D Reconstruction'},
+                { type: 'image', src: 'assets/project4/a2.png', caption: 'Casa dos Vinte e Quatro - 3D Reconstruction'},
+				{ type: 'image', src: 'assets/project4/a3.png', caption: 'UV Texture Mapping Example'},
+				{ type: 'image', src: 'assets/project4/a4.png', caption: 'Texture Development - Adobe Substance Painter'},
+				{ type: 'image', src: 'assets/project4/a5.png', caption: 'Paços do Concelho - 3D Reconstruction'},
+				{ type: 'image', src: 'assets/project4/a6.png', caption: 'Palácio de Cristal - 3D Reconstruction'},
+				{ type: 'image', src: 'assets/project4/a7.png', caption: 'Render example using Arnold - Paços do Concelho'},
+				{ type: 'image', src: 'assets/project4/a8.png', caption: 'Render example using Arnold - Casa dos Vinte e Quatro'},
+            ]
+        },
+		5: {
+            media: [
+				{ type: 'image', src: 'assets/project5/ENTRA1.png', caption: 'Brand and product design for a wine surprise box, offering a curated experience.'},
+				{ type: 'image', src: 'assets/project5/entra2.png', caption: 'Visual identity, ads, and a Shopify site for a wine surprise box project.'},
+            ]
+        },
+		6: {
+            media: [
+				{ type: 'text-video', text: "So long involves the development of a basic 2D game as part of the 42 code school curriculum.<br><br>The project focuses on working with textures, sprites, and core gameplay mechanics.<br>It\’s built using the MiniLibX graphical library and includes the implementation of various features like window management, event handling, map rendering, and character movement.", videoSrc: 'assets/project6/solong.mov', caption: ''},
+			]
         },
         // Adicione outros projetos para desktop aqui
     };

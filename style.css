@@ -1,4 +1,4 @@
-/* Importa a fonte */
+
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
@@ -27,8 +27,8 @@
   }
 
 html, body {
-	overflow-x: hidden; /* Impede o scroll horizontal */
-	width: 100%; /* Garante que o body não exceda a largura da viewport */
+	overflow-x: hidden; 
+	width: 100%; 
 	font-family: "Urbanist", sans-serif;
 	scroll-behavior: smooth;
 	background-color: #f7f7f7;
@@ -37,14 +37,14 @@ html, body {
 .testando {
 	position: absolute;
 	width: 100%;
-	height: 100%; /* Certifica-se de que o container ocupa toda a altura disponível */
+	height: 100%; 
 	top: 0;
 	left: 0;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: center; /* Centraliza verticalmente */
-	align-items: center; /* Centraliza horizontalmente */
+	justify-content: center; 
+	align-items: center; 
 	overflow: hidden;
   }
 .testando .text{
@@ -62,7 +62,7 @@ html, body {
 	color: rgba(0, 0, 0, 0.588);
 	font-weight: 300;
 	font-size: 3.3rem;
-	margin-bottom: 10px; /* Adiciona um pequeno espaçamento entre os textos */
+	margin-bottom: 10px; 
   }
 
 .text.sec-text:before{
@@ -87,8 +87,8 @@ html, body {
 }
 
 img {
-	pointer-events: none; /* Desativa todos os eventos do ponteiro, incluindo arrastar */
-/* Para navegadores que suportam */
+	pointer-events: none; 
+
   }
 
 .container {
@@ -123,39 +123,39 @@ section {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	max-width: 90%; /* Ajusta a largura máxima ao tamanho do contêiner pai */
+	max-width: 90%; 
 	max-height: 70%;
 	transform: translate(-50%, -50%);
 	width: 500px;
 	height: 700px;
 	background-color: rgba(205, 205, 205, 0.564);
 	border-radius: 40px;
- /* Espaço interno ao redor dos botões */
+ 
 	padding-top: 1.5%;
 	display: flex;
-	flex-direction: column; /* Alinha os itens verticalmente */
-	 /* Centraliza os itens horizontalmente */
-	justify-content: flex-start;/* Centraliza os itens verticalmente */
-	gap: 4vh; /* Adiciona espaçamento entre os elementos filhos */
-	backdrop-filter: blur(10px); /* Adiciona o efeito de desfoque ao fundo */
-    -webkit-backdrop-filter: blur(10px); /* Prefixo para compatibilidade com WebKit */
+	flex-direction: column; 
+	 
+	justify-content: flex-start;
+	gap: 4vh; 
+	backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
   }
   
 
 .img h1 {
-	font-size: 2.5rem; /* Ajusta o tamanho da fonte conforme necessário */
-	margin: 0; /* Remove a margem padrão */
-	margin-left: 3.9vw; /* Margem lateral esquerda */
-	margin-top: 1vh; /* Margem superior */
-	margin-right: 3vw; /* Margem lateral direita */
+	font-size: 2.5rem; 
+	margin: 0; 
+	margin-left: 3.9vw; 
+	margin-top: 1vh; 
+	margin-right: 3vw; 
 	color:rgb(0, 0, 0)
   }
 
   .img h2 {
-	margin-left: 3vw; /* Margem lateral esquerda */
-	margin-top: 1vh; /* Margem superior */
+	margin-left: 3vw; 
+	margin-top: 1vh; 
 	margin-right: 20px; 
-	font-size: 1.5rem; /* Ajusta o tamanho da fonte conforme necessário */
+	font-size: 1.5rem; 
   }
 
 
@@ -163,12 +163,12 @@ p {
   color: rgb(85,85,85);
 }
 
-/* TRANSITION */
+
 a, .btn {
   transition: all 300ms ease;
 }
 
-/* DESKTOP NAV */
+
 nav, 
 .navlinks {
   display: flex;
@@ -189,7 +189,7 @@ h3{
 	margin-left: 8%;
 }
 
-/* Barra Lateral Flutuante */
+
 .sidebar {
   position: fixed;
   right: 2%;
@@ -219,50 +219,50 @@ h3{
   
 }
 
-/* Cores dos ícones e transições */
+
 .sidebar-icon img, .sidebar-icon svg {
   width: 40px;
   height: 40px;
   opacity: 0.5;
-  filter: grayscale(80%); /* Desatura completamente, preto e branco */
-  transition: filter 0.3s, transform 0.3s; /* Transição para filter */
+  filter: grayscale(80%); 
+  transition: filter 0.3s, transform 0.3s; 
 }
 
-/* Hover */
+
 .sidebar-icon:hover img, .sidebar-icon:hover svg {
-  filter: grayscale(0%); /* Restaura a cor ao passar o mouse */
+  filter: grayscale(0%); 
   opacity: 1;
 }
 
-/* Clique */
+
 .sidebar-icon:active img, .sidebar-icon:active svg {
-  /* Garante que a cor completa esteja visível ao clicar */
-  transform: scale(1.1); /* Opcional: aumenta o ícone ao clicar */
+  
+  transform: scale(1.1); 
   opacity: 1;
 }
 
 .sidebar-icon.active img {
-    filter: grayscale(0%); /* Colore o ícone ativo */
+    filter: grayscale(0%); 
 	opacity: 1;
 }
 
 .sidebar-icon:hover {
   background: rgba(255, 255, 255, 0.8);
-  opacity: 1; /* Cor de fundo ao passar o mouse */
+  opacity: 1; 
 }
 
-/* Mobile Navbar (Bottom Bar) */
+
 #mobile-nav {
-  display: none; /* Oculta a barra inferior em telas maiores */
+  display: none; 
 }
 
 .lowerbar {
 	position: fixed;
 	bottom: 0.9rem;
-	left: 1rem; /* Remova esta linha se precisar usar o right */
-	right: 1rem; /* Adicione esta linha se quiser usar right */
-	width: calc(100% - 2rem); /* Ajusta a largura para compensar os valores de left e right */
-	height: 75px; /* Ajuste a altura conforme necessário */
+	left: 1rem; 
+	right: 1rem; 
+	width: calc(100% - 2rem); 
+	height: 75px; 
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -279,32 +279,32 @@ h3{
   align-items: center;
   width: 35px;
   height: 35px;
-  transition: filter 0.3s, transform 0.3s; /* Adiciona transição */
+  transition: filter 0.3s, transform 0.3s; 
 }
 
-/* Transições dos ícones da barra inferior */
+
 .lowerbar-icon img, .lowerbar-icon svg {
   width: 35px;
   height: 35px;
-  filter: grayscale(100%); /* Desatura completamente, preto e branco */
+  filter: grayscale(100%); 
   opacity: 0.5;
 }
 
-/* Hover */
+
 .lowerbar-icon:hover img, .lowerbar-icon:hover svg {
-  filter: grayscale(0%); /* Restaura a cor ao passar o mouse */
+  filter: grayscale(0%); 
   opacity: 1;
 }
 
-/* Clique */
+
 .lowerbar-icon:active img, .lowerbar-icon:active svg {
-  filter: grayscale(0%); /* Garante que a cor completa esteja visível ao clicar */
-  transform: scale(1.1); /* Opcional: aumenta o ícone ao clicar */
+  filter: grayscale(0%); 
+  transform: scale(1.1); 
   opacity: 1;
 }
 
 .lowerbar-icon.active img {
-    filter: grayscale(0%); /* Colore o ícone ativo */
+    filter: grayscale(0%); 
 	opacity: 1;
 }
 
@@ -312,10 +312,10 @@ h3{
 
 .buttons {
 	display: flex;
-	flex-direction: column; /* Alinha os botões verticalmente em uma coluna */
-	align-items: center; /* Centraliza os botões horizontalmente dentro do contêiner */
-	gap: 0.5rem; /* Espaçamento entre os botões */
-	width: 96%; /* Garante que o contêiner ocupe toda a largura disponível */
+	flex-direction: column; 
+	align-items: center; 
+	gap: 0.5rem; 
+	width: 96%; 
 	min-height: 100px;
 	margin-bottom: 10%;
 	overflow-y: auto;
@@ -323,28 +323,28 @@ h3{
 
 .project-list {
 	display: flex;
-	flex-direction: column; /* Alinha os botões verticalmente */
-	gap: 0; /* Remove o espaçamento entre os botões */
-	align-items: center; /* Centraliza os botões horizontalmente */
-	width: 100%; /* Garante que a lista de botões ocupe toda a largura disponível */
+	flex-direction: column; 
+	gap: 0; 
+	align-items: center; 
+	width: 100%; 
 	align-self: center;
 }
 
 
 .project-button {
-	background-color: transparent; /* Remove o background */
+	background-color: transparent; 
 	font: inherit;
-	color: rgb(0, 0, 0); /* Cor do texto padrão */
-	border: none; /* Remove a borda dos botões */
-	padding: 1rem 10px; /* Espaçamento interno dos botões */
+	color: rgb(0, 0, 0); 
+	border: none; 
+	padding: 1rem 10px; 
 	padding-bottom: 1rem;
 	font-weight: bold;
 	font-size: 1.3rem;
 	cursor: pointer;
-	transition: color 0.3s; /* Transição suave para a cor do texto */
-	width: 100%; /* Faz com que os botões ocupem toda a largura disponível */
+	transition: color 0.3s; 
+	width: 100%; 
 	text-align: center;
-	position: relative; /* Necessário para o pseudo-elemento */
+	position: relative; 
 }
 
 .project-button::after {
@@ -360,32 +360,32 @@ h3{
 }
 
 .project-button:last-child::after {
-	content: none; /* Remove o traço do último botão */
+	content: none; 
 }
 
 .project-button:hover {
-	color: #a2a2a2; /* Muda a cor do texto ao passar o mouse */
+	color: #a2a2a2; 
 }
 
 .buttons::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem vertical */
-    height: 12px; /* Altura da barra de rolagem horizontal (se necessário) */
+    width: 12px; 
+    height: 12px; 
 }
   
 .buttons::-webkit-scrollbar-thumb {
-    background: #00000039; /* Cor do polegar da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos do polegar */
+    background: #00000039; 
+    border-radius: 10px; 
 }
 .buttons::-webkit-scrollbar-track {
-    background: #f1f1f195; /* Cor de fundo da trilha da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos da trilha */
+    background: #f1f1f184; 
+    border-radius: 10px; 
 }
 
-  /* Estilo para o modal */
+  
 
 
   .modal {
-	display: none;  /* Oculta o modal por padrão */
+	display: none;  
 	position: fixed;
 	z-index: 1000;
 	left: 0;
@@ -394,7 +394,7 @@ h3{
 	height: 100%;
 	overflow: hidden;
 	background-color: rgba(255, 255, 255, 0.58);
-	backdrop-filter: blur(10px); /* Adiciona o efeito de desfoque ao fundo */
+	backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px); 
 	
   }
@@ -424,26 +424,26 @@ h3{
 }
 
 .modal-content video {
-    max-height: 60vh; /* Ajusta a altura máxima */
-	max-width: 60vh;
-    border-radius: 34px;
+    max-height: 55vh; 
+	max-width: 40vw;
+    border-radius: 20px;
     display: block;
-	margin: 0 auto; /* Centraliza a imagem ou vídeo */
+	margin: 0 auto; 
 
 }
 .modal-content img {
-    max-height: 60vh; /* Ajusta a altura máxima */
+    max-height: 55vh; 
 	max-width: 80vh;
     border-radius: 10px;
     display: block;
-	margin: 0 auto; /* Centraliza a imagem ou vídeo */
+	margin: 0 auto; 
 
 }
 
 .nav-btn {
 	width: 50px;
 	height: 50px;
-	bottom: 5%;
+	bottom: -5%;
     position: absolute;
     background-color: rgb(255, 255, 255);
     color: white;
@@ -477,6 +477,7 @@ h3{
 }
 .modal-content p {
     text-align: left;
+	padding-top: 1%;
     font-size: 1rem;
 	justify-content: center;
 	align-items: center;
@@ -494,7 +495,7 @@ h3{
 }
 .intro-text {
 	max-width: 30%;
- /* O texto ocupará 40% do container pai */
+ 
 	height: auto;
     text-align: right;
     font-size: 1rem;
@@ -516,38 +517,38 @@ left: 47.5%;
   margin-bottom: 10%;
   box-shadow: 0 -1px 30px rgba(0, 0, 0, 0.066);
   
-  border: none; /* Remove a borda padrão */
+  border: none; 
   border-radius: 50%;
   color: #00000027;
   cursor: pointer;
 }
 
   .contact-form {
-	width: 92%; /* Garante que o formulário ocupe toda a largura disponível */
-	min-height: 100px;/* Altura do formulário */
+	width: 92%; 
+	min-height: 100px;
 	display: flex;
 	flex-direction: column;
 	align-self: center;
 	justify-content: center;
-	gap: 1.4rem; /* Espaçamento entre os campos do formulário */
-	box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
-    padding: 20px; /* Adiciona padding interno para espaçamento *//* Arredonda os cantos da card */
-	margin-bottom: 8%; /* Espaçamento inferior */
-	 /* Adiciona barra de rolagem vertical */
+	gap: 1.4rem; 
+	box-sizing: border-box; 
+    padding: 20px; 
+	margin-bottom: 8%; 
+	 
 	
   }
   .contact-form::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem vertical */
-    height: 12px; /* Altura da barra de rolagem horizontal (se necessário) */
+    width: 12px; 
+    height: 12px; 
 }
   
 .contact-form::-webkit-scrollbar-thumb {
-    background: #00000039; /* Cor do polegar da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos do polegar */
+    background: #00000039; 
+    border-radius: 10px; 
 }
 .contact-form::-webkit-scrollbar-track {
-    background: #f1f1f195; /* Cor de fundo da trilha da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos da trilha */
+    background: #f1f1f195; 
+    border-radius: 10px; 
 }
 
   .form-group {
@@ -557,12 +558,12 @@ left: 47.5%;
   
   .form-group label {
 	font-size: 1rem;
-	margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
+	margin-bottom: 5px; 
   }
   
   .form-group input,
   .form-group textarea {
-	width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+	width: 100%; 
 	padding: 10px;
 	border-radius: 20px;
 	border: 1px solid #cccccc96;
@@ -571,17 +572,17 @@ left: 47.5%;
   }
   
   .form-group textarea {
-	resize: none; /* Permite redimensionar verticalmente */
-	min-height: 10px; /* Altura mínima */
-	max-height: 800px; /* Altura máxima */
+	resize: none; 
+	min-height: 10px; 
+	max-height: 800px; 
   }
   
   .submit-btn {
 	padding: 10px 20px;
 	margin-top: 3%;
-	align-self: center; /* Centraliza o botão horizontalmente */
-	width: 40%; /* Ajusta a largura do botão */
-	background-color: #007bff;
+	align-self: center; 
+	width: 40%; 
+	background-color: #2926E2;
 	color: white;
 	border: none;
 	border-radius: 20px;
@@ -591,21 +592,21 @@ left: 47.5%;
   }
   
   .submit-btn:hover {
-	background-color: #0056b3;
+	background-color: #161491;
   }
 
-/* Animação para o cursor customizado */
+
 @keyframes cursorEnter {
 	0% {
-	  transform: scale(0.5); /* Início menor */
+	  transform: scale(0.5); 
 	  opacity: 0;
 	}
 	50% {
-	  transform: scale(1.1); /* Aumenta um pouco */
+	  transform: scale(1.1); 
 	  opacity: 1;
 	}
 	100% {
-	  transform: scale(1); /* Tamanho normal */
+	  transform: scale(1); 
 	  opacity: 1;
 	}
   }
@@ -617,64 +618,64 @@ left: 47.5%;
 	pointer-events: none;
 	display: none;
 	z-index: 1000;
-	transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave para transformação e opacidade */
+	transition: transform 0.3s ease, opacity 0.3s ease; 
   }
   
   .custom-cursor.show {
-	display: block; /* Torna o cursor visível */
-	animation: cursorEnter 0.6s ease; /* Animação quando o cursor aparece */
+	display: block; 
+	animation: cursorEnter 0.6s ease; 
   }
   
-  /* Estilo para a área específica onde o cursor customizado aparecerá */
+  
   #custom-cursor-area {
-	cursor: none; /* Esconde o cursor padrão */
+	cursor: none; 
   }
   
 
   .footer {
 	width: 100%;
-	height: 100px; /* Ajuste conforme necessário para o footer */
-	background-color: #ffffff00; /* Fundo escuro para o footer */
-	color: #fff; /* Texto branco */
-	text-align: center; /* Centraliza o texto */
+	height: 100px; 
+	background-color: #ffffff00; 
+	color: #fff; 
+	text-align: center; 
 	margin-bottom: 1%;
 
   }
   
   .social-media {
 	display: flex;
-	justify-content: center; /* Centraliza horizontalmente */
-	gap: 15px; /* Espaço entre os ícones */
-	margin-bottom: 10px; /* Espaço abaixo dos ícones */
-	padding-bottom: 4rem; /* Espaço interno abaixo dos ícones */
+	justify-content: center; 
+	gap: 15px; 
+	margin-bottom: 10px; 
+	padding-bottom: 4rem; 
   }
   
   .social-icon {
 	display: flex;
 	align-items: center;
-	justify-content: center; /* Centraliza o conteúdo dentro do botão */
-	width: 78px; /* Largura dos botões */
-	height: 78px; /* Altura dos botões */
-	border-radius: 50%; /* Botões redondos */
-	background-color: #e7e7e7; /* Cor de fundo dos botões */
-	transition: background-color 0.3s, transform 0.3s; /* Transição suave */
+	justify-content: center; 
+	width: 78px; 
+	height: 78px; 
+	border-radius: 50%; 
+	background-color: #e7e7e7; 
+	transition: background-color 0.3s, transform 0.3s; 
   }
 
   
   .social-icon img {
-	width: 38px; /* Ajuste conforme necessário para o tamanho do ícone */
-	height: 38px; /* Ajuste conforme necessário para o tamanho do ícone */
-	fill: #fff; /* Ajusta a cor do ícone se necessário */
+	width: 38px; 
+	height: 38px; 
+	fill: #fff; 
   }
   
   .social-icon:hover {
-	background-color: #55555567; /* Cor de fundo ao passar o mouse */
-	transform: scale(1.0); /* Aumenta o tamanho do botão ao passar o mouse */
+	background-color: #55555567; 
+	transform: scale(1.0); 
   }
   
   .footer .copyright {
-	margin-top: 10px; /* Espaço acima do texto de copyright */
-	font-size: 14px; /* Tamanho da fonte */
+	margin-top: 10px; 
+	font-size: 14px; 
 	opacity: 0.4;
   }
 
@@ -699,70 +700,70 @@ left: 47.5%;
 }
 
 .content-wrapper::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem vertical */
-    height: 12px; /* Altura da barra de rolagem horizontal (se necessário) */
+    width: 12px; 
+    height: 12px; 
 }
   
 .content-wrapper::-webkit-scrollbar-thumb {
-    background: #00000039; /* Cor do polegar da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos do polegar */
+    background: #00000039; 
+    border-radius: 10px; 
 }
 .content-wrapper::-webkit-scrollbar-track {
-    background: #f1f1f195; /* Cor de fundo da trilha da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos da trilha */
+    background: #f1f1f195; 
+    border-radius: 10px; 
 }
 
 
 .content-wrapper2::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem vertical */
-    height: 12px; /* Altura da barra de rolagem horizontal (se necessário) */
+    width: 12px; 
+    height: 12px; 
 }
   
 .content-wrapper2::-webkit-scrollbar-thumb {
-    background: #00000039; /* Cor do polegar da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos do polegar */
+    background: #00000039; 
+    border-radius: 10px; 
 }
 .content-wrapper::-webkit-scrollbar-track {
-    background: #f1f1f195; /* Cor de fundo da trilha da barra de rolagem */
-    border-radius: 10px; /* Arredonda os cantos da trilha */
+    background: #f1f1f195; 
+    border-radius: 10px; 
 }
 
-/* Top section: text and image */
+
 .top-section {
     display: flex;
     justify-content: center;
-    align-items: center; /* Ensure both items are centered vertically */
-    margin-bottom: 1%; /* Space between the top and bottom sections */
+    align-items: center; 
+    margin-bottom: 1%; 
 }
 
-/* Text column styling */
+
 .text-column {
     flex: 1.1;
-    padding-right: 1rem; /* Space between text and image */
+    padding-right: 1rem; 
     margin-left: 2rem;
     display: flex;
-    justify-content: center; /* Center the text horizontally */
-    align-items: center; /* Center the text vertically */
+    justify-content: center; 
+    align-items: center; 
 }
 
-/* Image column styling */
+
 .image-column {
     flex: 1;
     margin-right: 2rem;
     display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
+    justify-content: center; 
+    align-items: center; 
 }
 
-/* Style for the image */
+
 .image-column img {
-    max-width: 90%; /* Adjust this value to control the image size */
+    max-width: 90%; 
     height: auto;
-    border-radius: 50%; /* Optional: Makes the image circular */
+    border-radius: 50%; 
 	border: 3px solid #00000033;
 }
 
-/* Bottom text styling */
+
 .bottom-text {
     width: 90%;
     box-sizing: border-box;
@@ -770,40 +771,42 @@ left: 47.5%;
     align-items: left;
 }
 
-/* Style for the button */
+
 .resume-button {
     display: inline-block;
-    margin-left: 2rem; /* Space between the text and button */
+    margin-left: 2rem; 
     color: rgb(3, 3, 3);
     border: none;
     cursor: pointer;
     font-size: 1rem;
     text-align: left;
     margin-right: 60%;
-    background-color: #8d4b4b00; /* Space above the button */
+    background-color: #8d4b4b00; 
     margin-bottom: 20%;
     text-decoration: underline;
     text-decoration-style: solid;
     text-decoration-thickness: 1.4px;
 }
 
-/* Hover effect for the button */
+
 .resume-button:hover {
-    color: rgb(106, 106, 106); /* Change this to your desired hover color */
+    color: rgb(106, 106, 106); 
 }
 
 
-/* Estilize o container do grid */
+
 .skills-container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
 }
+
+
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 4 colunas, ajuste conforme necessário */
-    gap: 20px 20px; /* 10px entre linhas, 20px entre colunas */
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 20px 20px; 
     width: 100%;
     max-width: 1200px;
     margin: 0 1rem;
@@ -817,16 +820,32 @@ left: 47.5%;
     align-items: center;
     background-color: none;
     transition: transform 0.3s ease;
-    width: 100%; /* Ocupa toda a largura da coluna */
-    height: auto; /* Ajusta a altura automaticamente */
+    width: 100%; 
+    height: auto; 
 }
 
 .skill-item svg {
     width: 100%;
     height: auto;
-    max-width: 100px; /* Ajusta o tamanho máximo do SVG */
+    max-width: 100px; 
     fill: #000;
 }
+
+
+.skills-container::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px; 
+}
+  
+.skills-container::-webkit-scrollbar-thumb {
+    background: #00000039; 
+    border-radius: 10px; 
+}
+.skills-container:-webkit-scrollbar-track {
+    background: #f1f1f195; 
+    border-radius: 10px; 
+}
+
 
 
 .skill-item:hover {
