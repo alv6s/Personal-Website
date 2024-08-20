@@ -271,7 +271,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-left: auto;
+	margin-left: 10%;
 	margin-right:auto;
 	order: -1;
 	
@@ -359,7 +359,21 @@
 			margin-right: 4%;
 			overflow-y: auto;
 			}
-		
+		.content-wrapper::after {
+				content: 'ᐯ'; /* Use o símbolo de seta ou uma imagem se preferir */
+				position: absolute;
+				bottom: 3%; /* Ajuste conforme necessário */
+				right: 10%;  /* Ajuste conforme necessário */
+				color: #0000002d;  /* Cor da seta */
+				font-size: 24px; /* Tamanho da seta */
+				pointer-events: none; /* Para não interferir com a rolagem */
+				opacity: 1; /* Mostra a seta */
+				transition: opacity 0.3s ease; /* Transição suave */
+			}
+			
+		.content-wrappert.no-scroll::after {
+   		 opacity: 0; /* Esconde a seta */
+			}
 		.bottom-text {
 			width: 90%;
 			box-sizing: border-box;
