@@ -17,13 +17,29 @@ document.addEventListener("DOMContentLoaded", function() {
     positions['tools'] = document.getElementById('tools').offsetTop;
         positions['contact'] = document.getElementById('contact').offsetTop;
 
-		window.addEventListener('resize', () => {
-			clearTimeout(resizeTimeout);
-			resizeTimeout = setTimeout(() => {
-				// Ajustar qualquer lógica de layout necessário aqui
-			}, 250);
-		});
+		function isMobile() {
+			return window.innerWidth <= 768; // Ajuste o valor conforme sua definição de mobile
+		}
 		
+		// Função que será chamada no redimensionamento
+		function handleResize() {
+			if (isMobile()) {
+				// Lógica para mobile
+				clearTimeout(resizeTimeout);
+				resizeTimeout = setTimeout(() => {
+					// Ajustar qualquer lógica de layout necessário aqui
+				}, 250);
+			} else {
+				// Lógica para desktop
+				window.location.reload();
+			}
+		}
+		
+		// Adicionar o listener de resize
+		window.addEventListener('resize', handleResize);
+		
+
+	
     links.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
