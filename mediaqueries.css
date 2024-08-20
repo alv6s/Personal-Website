@@ -373,7 +373,7 @@
 			overflow-y: auto;
 			}
 		.content-wrapper::after {
-				content: 'ᐯ'; /* Use o símbolo de seta ou uma imagem se preferir */
+				content: 'ˇ'; /* Use o símbolo de seta ou uma imagem se preferir */
 				position: absolute;
 				bottom: 3%; /* Ajuste conforme necessário */
 				right: 10%;  /* Ajuste conforme necessário */
