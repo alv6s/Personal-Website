@@ -17,9 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
     positions['tools'] = document.getElementById('tools').offsetTop;
         positions['contact'] = document.getElementById('contact').offsetTop;
 
-	window.addEventListener('resize', () => {
-			window.location.reload(); 
-	});
+		window.addEventListener('resize', () => {
+			clearTimeout(resizeTimeout);
+			resizeTimeout = setTimeout(() => {
+				// Ajustar qualquer lógica de layout necessário aqui
+			}, 250);
+		});
+		
     links.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
