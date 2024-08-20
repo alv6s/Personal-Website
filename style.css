@@ -350,7 +350,7 @@ h3{
 .project-button::after {
 	content: '';
 	position: absolute;
-	left: 50%;
+	left: 54%;
 	bottom: 0px;
 	border-radius: 2px;
 	transform: translateX(-50%);
