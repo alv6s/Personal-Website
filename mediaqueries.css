@@ -45,13 +45,15 @@
 		font-size: 2rem;
 		margin-top: 1.7vh;
 		
-		margin-left: 7vw;
+		margin-left: 11vw;
 	}
 	.img h2{
 		font-size: 1.4rem;
-		margin-left: 6vw;
+		margin-left: 11vw;
 		margin-top: 1.5vh;
-		margin-right: 4vw;
+	}
+	.img h3{
+		margin-left: 11vw;
 	}
 	.contact-form {
 		gap: 1rem;
@@ -256,7 +258,7 @@
 	.content-wrapper {
     display: flex;
     flex-direction: column;
-
+	margin-bottom: 19%;
 	overflow-y: auto;
 	gap: 0.6rem;
 	
@@ -325,6 +327,7 @@
 .resume-button {
     text-align: center;
     margin-right: 10%;
+	margin-left: 11vw;
     margin-bottom: 5%;
 }
 .skills-container {

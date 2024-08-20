@@ -686,7 +686,7 @@ left: 47.5%;
 	overflow-y: hidden;
 	overflow-x: hidden;
 	gap: 2rem;
-	margin-bottom: 10%;
+	margin-bottom: 15%;
 	margin-right: 4%;
 }
 .content-wrapper2 {
@@ -773,8 +773,10 @@ left: 47.5%;
 
 
 .resume-button {
+	position: absolute;
     display: inline-block;
     margin-left: 2rem; 
+	bottom: 3%;
     color: rgb(3, 3, 3);
     border: none;
     cursor: pointer;
