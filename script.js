@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const currentScroll = window.scrollY;
                 gsap.to(window, {
                     scrollTo: { y: targetPosition },
-                    duration: 1, // Duração da animação em segundos
+                    duration: 0.8, // Duração da animação em segundos
                     ease: "power2.out",
                     onComplete: () => {
                         // Reativar todos os ScrollTriggers após a rolagem
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Use GSAP para rolar suavemente até a posição do alvo
             gsap.to(window, {
                 scrollTo: { y: targetPosition },
-                duration: 1, // Duração da animação em segundos
+                duration: 0.8, // Duração da animação em segundos
                 ease: "power2.out",
                 onComplete: () => {
                     // Reative todos os ScrollTriggers após a rolagem
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalVideo.play();
                 modalVideo.loop = true;
                 modalVideo.controls = false;
-                modalVideo.muted = true;
+                modalVideo.muted = false;
             } else if (media.type === 'text') {
                 introText.innerHTML = `<p>${media.text}</p>`;
                 introText.style.display = 'block';
