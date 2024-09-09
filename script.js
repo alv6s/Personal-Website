@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 gsap.to(window, {
                     scrollTo: { y: targetPosition },
                     duration: 0.8, // Duração da animação em segundos
-                    ease: "power2.out",
+                    ease: "power2.inOut",
                     onComplete: () => {
                         // Reativar todos os ScrollTriggers após a rolagem
                         ScrollTrigger.getAll().forEach(trigger => trigger.enable());
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
             gsap.to(window, {
                 scrollTo: { y: targetPosition },
                 duration: 0.8, // Duração da animação em segundos
-                ease: "power2.out",
+                ease: "power2.inOut",
                 onComplete: () => {
                     // Reative todos os ScrollTriggers após a rolagem
                     ScrollTrigger.getAll().forEach(trigger => trigger.enable());
