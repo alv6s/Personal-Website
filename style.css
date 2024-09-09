@@ -120,7 +120,7 @@ section {
 }
 
 .img {
-	position: absolute;
+	position: relative;
 	top: 50%;
 	left: 50%;
 	max-width: 90%; 
@@ -187,6 +187,7 @@ a {
 
 h3{
 	margin-left: 8%;
+	margin-right: 8%;
 }
 
 
@@ -203,14 +204,15 @@ h3{
   border-radius: 50px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  overflow: visible;
 }
 
 .sidebar-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   background: #ffffff;
   text-decoration: none;
@@ -633,12 +635,10 @@ left: 47.5%;
   
 
   .footer {
-	width: 100%;
-	height: 100px; 
+	height: 0px; 
 	background-color: #ffffff00; 
 	color: #fff; 
 	text-align: center; 
-	margin-bottom: 1%;
 
   }
   
@@ -855,3 +855,12 @@ left: 47.5%;
     transform: scale(1.05);
 }
 
+.contact-stuff {
+    flex: 1; /* Faz com que a .contact-stuff se expanda para preencher o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Alinha o conteúdo verticalmente no centro */
+  align-items: center; /* Alinha o conteúdo horizontalmente no centro */
+
+  gap: 20px;
+}
