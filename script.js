@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const links = document.querySelectorAll(".sidebar a, .lowerbar a");
 	const sections = ["about", "projects", "tools", "contact"];
 
-    // Mapeia as posições das seções
+   
     sections.forEach(section => {
         positions[section] = document.getElementById(section).offsetTop;
     });
@@ -18,43 +18,35 @@ document.addEventListener("DOMContentLoaded", function() {
         positions['contact'] = document.getElementById('contact').offsetTop;
 
 		function isMobile() {
-			return window.innerWidth <= 768; // Ajuste o valor conforme sua definição de mobile
+			return window.innerWidth <= 768; 
 		}
 		
-		// Função que será chamada no redimensionamento
+	
 		function handleResize() {
 			if (isMobile()) {
-				// Lógica para mobile
+				
 				clearTimeout(resizeTimeout);
 				resizeTimeout = setTimeout(() => {
-					// Ajustar qualquer lógica de layout necessário aqui
 				}, 250);
 			} else {
-				// Lógica para desktop
 				window.location.reload();
 			}
 		}
-		
-		// Adicionar o listener de resize
 		window.addEventListener('resize', handleResize);
 		
-
-	
     links.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1); // Remove o #
+            const targetId = this.getAttribute("href").substring(1);
 
-            // Verificar se o ID está no mapeamento
             if (positions[targetId] !== undefined) {
                 const targetPosition = positions[targetId];
                 const currentScroll = window.scrollY;
                 gsap.to(window, {
                     scrollTo: { y: targetPosition },
-                    duration: 0.8, // Duração da animação em segundos
+                    duration: 0.8, 
                     ease: "power2.inOut",
                     onComplete: () => {
-                        // Reativar todos os ScrollTriggers após a rolagem
                         ScrollTrigger.getAll().forEach(trigger => trigger.enable());
                     }
                 });
@@ -85,22 +77,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	const secTextElement = document.getElementById('custom-cursor-area');
     secTextElement.addEventListener('click', function (e) {
-        e.preventDefault(); // Impede o comportamento padrão
+        e.preventDefault();
 
-        // ID do alvo para onde você quer rolar
         const targetId = 'contact';
 
-        // Verifique se o ID está no mapeamento
+
         if (positions[targetId] !== undefined) {
             const targetPosition = positions[targetId];
 
-            // Use GSAP para rolar suavemente até a posição do alvo
+            
             gsap.to(window, {
                 scrollTo: { y: targetPosition },
-                duration: 0.8, // Duração da animação em segundos
+                duration: 0.8,
                 ease: "power2.inOut",
                 onComplete: () => {
-                    // Reative todos os ScrollTriggers após a rolagem
+
                     ScrollTrigger.getAll().forEach(trigger => trigger.enable());
                 }
             });
@@ -176,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentProject = {};
     let currentIndex = 0;
 
-    // Define os projetos para mobile e desktop
     const mobileProjects = {
         1: {
             media: [
@@ -233,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				{ type: 'video', src: 'assets/project6/solong.mov', caption: ''},
 				 ]
         },
-        // Adicione outros projetos para mobile aqui
+
     };
 
     const desktopProjects = {
@@ -288,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				{ type: 'text-video', text: "So long involves the development of a basic 2D game as part of the 42 code school curriculum.<br><br>The project focuses on working with textures, sprites, and core gameplay mechanics.<br>It\’s built using the MiniLibX graphical library and includes the implementation of various features like window management, event handling, map rendering, and character movement.", videoSrc: 'assets/project6/solong.mov', caption: ''},
 			]
         },
-        // Adicione outros projetos para desktop aqui
+
     };
 
     function getProjects() {
@@ -297,19 +287,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showMedia(index) {
         const isMobile = window.innerWidth <= 768;
-        const itemsPerPage = isMobile ? 1 : 1; // Exibe 1 item por página
-
-        // Limpa a exibição atual
+        const itemsPerPage = isMobile ? 1 : 1;
+       
         modalImage.style.display = 'none';
         modalVideo.style.display = 'none';
         introText.style.display = 'none';
 
-        // Pausa o vídeo anterior e limpa o source
         modalVideo.pause();
         modalVideoSource.src = '';
         modalVideo.load();
 
-        // Calcula o índice máximo permitido
         const media = currentProject.media[index];
         if (media) {
             if (media.type === 'image') {

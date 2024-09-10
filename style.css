@@ -856,11 +856,11 @@ left: 47.5%;
 }
 
 .contact-stuff {
-    flex: 1; /* Faz com que a .contact-stuff se expanda para preencher o espaço disponível */
+    flex: 1; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Alinha o conteúdo verticalmente no centro */
-  align-items: center; /* Alinha o conteúdo horizontalmente no centro */
+  justify-content: center; 
+  align-items: center; 
 
   gap: 15%;
 }
