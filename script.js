@@ -404,29 +404,17 @@ const textLoad = () => {
 		text.textContent = "UX/UI Design";
 	}, 0);
 	setTimeout(() => {
-		text.textContent = "Web Development";
-	}, 4000);
-	setTimeout(() => {
 		text.textContent = "3D Modeling";
-	}, 8000);
+	}, 3999);
 	setTimeout(() => {
 		text.textContent = "Image Design";
-	}, 12000);
+	}, 7999);
 	setTimeout(() => {
 		text.textContent = "Front-End";
-	}, 16000);
-	setTimeout(() => {
-		text.textContent = "Mobile Development";
-	}, 20000);
-	setTimeout(() => {
-		text.textContent = "Video/Photo Editing";
-	}, 24000);
-	setTimeout(() => {
-		text.textContent = "VR/AR Development";
-	}, 28000);
+	}, 11999);
 	}
 	textLoad();
-	setInterval(textLoad, 32000);
+	setInterval(textLoad, 15999);
 
 	
 document.addEventListener("DOMContentLoaded", function() {
