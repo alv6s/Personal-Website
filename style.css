@@ -74,7 +74,7 @@ html, body {
 	width: 100%;
 	background-color: #f7f7f7;
 	border-left : 2px solid #1606c4;
-	animation : animate 3.8s steps(12) infinite;
+	animation : animate 4s steps(12) infinite;
 }
 
 @keyframes animate{

@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+window.onload = () => {
 const text = document.querySelector(".sec-text");
 
 const textLoad = () => {
@@ -415,7 +415,7 @@ const textLoad = () => {
 	}
 	textLoad();
 	setInterval(textLoad, 15999);
-
+}
 	
 document.addEventListener("DOMContentLoaded", function() {
     const customCursor = document.querySelector(".custom-cursor");
