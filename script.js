@@ -405,16 +405,16 @@ const textLoad = () => {
 	}, 0);
 	setTimeout(() => {
 		text.textContent = "3D Modeling";
-	}, 3999);
+	}, 4000);
 	setTimeout(() => {
 		text.textContent = "Image Design";
-	}, 7999);
+	}, 8000);
 	setTimeout(() => {
 		text.textContent = "Front-End";
-	}, 11999);
+	}, 12000);
 	}
 	textLoad();
-	setInterval(textLoad, 15999);
+	setInterval(textLoad, 16000);
 }
 	
 document.addEventListener("DOMContentLoaded", function() {
