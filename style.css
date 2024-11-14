@@ -65,6 +65,13 @@ html, body {
 	margin-bottom: 10px; 
   }
 
+  .testando .text.first-text2 {
+	color: #1606c4;
+	font-weight: 400;
+	font-size: 5.3rem;
+	margin-bottom: 10px; 
+  }
+
 .text.sec-text:before{
 	content: "";
 	position: absolute;
